@@ -1,0 +1,136 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Patterns that aren't in Frontend
+@import "patterns/step-by-step-navigation";
+@import "patterns/task-list";
+@import "patterns/related-items";
+
+// Components that aren't in Frontend
+@import "components/cookie-banner";
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+
+
+  #menu  {
+  background-color: rgba(163, 213, 47, 0);
+  Padding-top: 10px;
+  Padding-bottom: 200px;
+  font-size: 14px;
+
+  }
+
+
+  #label {
+    font-family: arial;
+    font-size: 16px;
+  }
+
+  #form-submit-button {
+
+    background: transparent;
+
+    box-shadow: 0px 0px 0px transparent;
+
+    border: 0px solid transparent;
+
+    text-shadow: 0px 0px 0px transparent;
+
+    font-size: 16px;
+
+    text-color: black;
+
+}
+
+
+
+#form-submit-button:hover {
+
+    background: transparent;
+
+    box-shadow: 0px 0px 0px transparent;
+
+    border: 0px solid transparent;
+
+    text-shadow: 0px 0px 0px transparent;
+
+    text-decoration: underline;
+
+    font-size: 16px;
+
+    text-color: black;
+
+}
+
+
+#previous-button {
+
+  background: transparent;
+
+  box-shadow: 0px 0px 0px transparent;
+
+  border: 0px solid transparent;
+
+  text-shadow: 0px 0px 0px transparent;
+
+  font-size: 16px;
+
+  text-decoration: underline;
+
+  text-color: black;
+
+
+
+
+}
+
+
+
+#previous-button:hover {
+
+  background: transparent;
+
+  box-shadow: 0px 0px 0px transparent;
+
+  border: 0px solid transparent;
+
+  text-shadow: 0px 0px 0px transparent;
+
+  text-decoration: underline;
+
+  font-size: 16px;
+
+  text-color: black;
+
+
+}
+
+#body  {
+padding-left: 25px;
+
+    }
+
+#hmlrheader {
+    margin-left: -30px;
+
+}
+
+#page {
+  font-family: arial;
+}
+
+#radios {
+    text-size: 10px;
+}
+
+
+
+
+#search-button:hover {
+
+
+}

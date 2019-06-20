@@ -1,0 +1,158 @@
+@import "node_modules/govuk-frontend/settings/all";
+
+$govuk-global-styles: true;
+
+// Override the govuk-frontend font stack
+$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+
+// Remove canvas background colour, as is used with the GOV.UK Footer.
+$govuk-canvas-background-colour: $govuk-body-background-colour;
+
+$govuk-page-width: 1200px;
+
+@import "node_modules/govuk-frontend/all";
+
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/docs/examples/blank-unbranded
+
+.govuk-tag--progress {
+
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-transform: capitilize;
+}
+
+.govuk-tag--delayed {
+  background-color: rgba(163,24,38,1);
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-transform: capitilize;
+}
+
+.govuk-tag--complete {
+
+  color: black;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-transform: capitilize;
+}
+
+#search-button {
+  width: 150px;
+  height: 40px;
+  background-color:  #006435;
+  color: white;
+  font-size: 19px;
+  margin-right: 20px;
+  box-shadow: none;
+  border-color: #00331B;
+  border-bottom-width: 2px;
+
+
+}
+
+#search-button:hover {
+  width: 150px;
+  height: 40px;
+  background-color: #006435;
+  border-color: #00331B;
+  border-bottom-width: 2px;
+  font-size: 19px;
+  color: white;
+  margin-right: 20px;
+  box-shadow: 1px 1px 1px black
+}
+
+.hide-row {
+    display: none;
+}
+
+.my-work tbody tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.my-work thead th:hover {
+  cursor: pointer;
+}
+
+.my-work tr.expandy-row:hover {
+  background-color: transparent;
+  cursor: default;
+}
+
+.my-work {
+   font-size: 14px;
+}
+
+.my-work tbody td {
+  font-weight: bold;
+  border-bottom: 0;
+  border-top: 1px solid #ddd;
+}
+
+.my-work tbody tr {
+}
+
+.my-work .viewed td {
+  font-weight: normal;
+}
+
+.my-work tr + .expandy-row td {
+  border-top: 0;
+}
+
+.my-work .openarrow {
+  display: none;
+}
+
+.my-work .closedarrow {
+  display: block;
+}
+
+.my-work tr.open .openarrow {
+  display: block;
+}
+
+.my-work tr.open .closedarrow {
+  display: none;
+}
+
+.vertical {
+  border-left: 2px solid grey;
+  margin-top: 0px;
+  margin-left: 20px;
+  height: 80px;
+
+}
+
+a:visited {
+  color:#000000;
+}
+
+.sortable {
+  &:after {
+    content: '  ↕'
+
+  }
+}
+
+.sortable--asc {
+  &:after {
+    content: '  ↑';
+  }
+}
+
+.sortable--desc {
+  &:after {
+    content: '  ↓';
+  }
+}

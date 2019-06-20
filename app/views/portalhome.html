@@ -1,0 +1,315 @@
+{% extends "layout_unbranded.html" %}
+
+
+{% block pageTitle %}
+  My Portal Homepage
+{% endblock %}
+
+{% block content %}
+
+<!-- Back & clear data top -->
+<div class="govuk-width-container">
+   <a href="index.html" class="govuk-back-link">Back to Index</a>
+
+
+<!-- Phase banner ----->
+   <div class="govuk-phase-banner">
+   <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag">
+   Prototype
+ </strong>
+     <span class="govuk-phase-banner__text">
+       This is a prototype and not a real service.
+     </span>
+   </p>
+ </div>
+ <br>
+ <br>
+
+<!-- Header -->
+  <div class="govuk-grid-row" >
+  <div class="govuk-grid-column-full" id="headerdiv">
+  <img src="public/images/headerlogo.svg">
+  <br>
+  <a href="#" style="float: right; font-size: 14px; font-weight: ; margin-top: -15px;"> Logout </a>
+
+  <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px;"> Customer Support </a>
+
+  <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px; padding-bottom: 0px;"> Jane Doe </a>
+
+
+  <hr style= "height: 4px;  background-image: linear-gradient(-60deg,#b4d307,#b4d307 50%,#d7e900 0,#d7e900); border: none;">
+  </div>
+  </div>
+  <br>
+  <br>
+
+
+<!-- Menu -->
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-quarter" id="menu">
+
+    <!--Portal Home Menu item-->
+    <div><button class="collapsible"><strong><a class="URL" href="index.html" style="text-decoration: none;">My Portal Homepage</a></strong></button></div>
+
+
+    <!--INFORMATION SERVICES DROPDOWN-->
+    <button class="collapsible"><strong>Information Services</strong></button>
+    <div class="content">
+    <div class="item"><a class="link" href="RequestOfficialCopies">Request official copies</a><br> </div>
+    <div class="item"><a class="link">Official Search of Whole with Priority</a></div>
+    <div class="item"><a class="link">Official Search of Part with Priority</a></div>
+    <div class="item"><a class="link">Withdraw Official Search with Priority</a></div>
+    <div class="item"><a class="link">Official Search of Whole without Priority</a></div>
+    <div class="item"><a class="link">Local Land Charges Search</a></div>
+    <div class="item"><a class="link">MapSearch *** FREE ***</a></div>
+    <div class="item"><a class="link">Application Enquiry *** FREE ***</a></div>
+    <div class="item"><a class="link">Search of the Index Map</a></div>
+    <div class="item"><a class="link">Home Rights Search</a></div>
+    <div class="item"><a class="link">Search Index of Relating Franchises and Manors</a></div>
+    <div class="item"><a class="link">Enquiry By Property Description - Title view</a></div>
+    <div class="item"><a class="link">Register View - PDF</a></div>
+    <div class="item"><a class="link">Register View - HTML</a></div>
+    <div class="item"><a class="link">Title Plan View</a></div>
+    <div class="item"><a class="link">Document View</a></div>
+    <div class="item"><a class="link">Request Historical Copies</a></div>
+    </div>
+
+    <!--LAND CHARGES DROPDOWN-->
+    <button class="collapsible"><strong>Land Charges Services</strong></button>
+    <div class="content">
+    <div class="item"><a class="link">Bankruptcy Search</a><br> </div>
+    <div class="item"><a class="link">Full Search</a></div>
+    <div class="item"><a class="link">Office Copy</a></div>
+    <div class="item"><a class="link">Registration View</a></div>
+    </div>
+
+    <!--DOCUMENT REGISTRATION SERVICE-->
+    <div><button class="collapsible" style="height: 50px;"><strong>Document Registration Service</strong></button>
+    </div>
+
+    <!--REPLY TO REQUISITION-->
+    <div><button class="collapsible"><strong>Reply to Requisition</strong></button>
+    </div>
+
+    <!--GENERAL FACILITIES-->
+    <div><button class="collapsible"><strong>General Facilities</strong></button>
+    <div class="content">
+    <div class="item"><a class="link">Message area</a><br> </div>
+    <div class="item"><a class="link">Services Requested</a></div>
+    <div class="item"><a class="link">PDF Downloads</a></div>
+    <div class="item"><a class="link">Notifications</a></div>
+    </div>
+
+    <!--Admin Services-->
+    <button class="collapsible"><strong>Administrative Services</strong></button>
+    <div class="content">
+    <div class="item"><a class="link">Alternative despatch address</a><br> </div>
+    <div class="item"><a class="link">Personal details</a></div>
+    <div class="item"><a class="link">Change password</a></div>
+    </div><br>
+
+
+
+</div>
+
+<style>
+
+  #submenu {
+    cursor: pointer;
+  }
+
+  /* Style the button that is used to open and close the collapsible content */
+  .collapsible {
+    background-color: none;
+    cursor: pointer;
+    height: 30px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 14px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 200px;
+
+  }
+
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #D4E039;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding-left: 10px;
+    font-size: 12px;
+    display: none;
+    overflow: hidden;
+    font-family: arial;
+    cursor: pointer;
+  }
+
+  .item {
+    width: 190px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .item:hover {
+      background: #E5EC89;
+  }
+
+  .link:hover {
+    background: #E5EC89;
+    text-decoration: underline;
+  }
+
+
+</style>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+</div>
+
+
+
+
+
+<!-- Service title -->
+
+  <div class="govuk-grid-column-three-quarters">
+<h1 class="govuk-body govuk-!-font-size-27" style="font-family: arial; padding-top: 5px;"></h1>
+</div>
+
+<!---CONTENT----------------------------------------------------------------->
+
+
+<div class="govuk-grid-column-three-quarters" style="font-family: arial;">
+<h1 href="#" style="margin-top: -20px;">
+  Quick links
+</h1></div>
+
+<div class="govuk-grid-column-one-quarter">
+<a class="govuk-!-font-size-24 govuk-link govuk-link--no-visited-state" href="sessionone" style="font-color: #035EA5">
+My Work
+</a>
+<br>
+<br>
+
+<a href="#" class="govuk-body govuk-!-font-size-19 govuk-link govuk-link--no-visited-state"  style="text-decoration: none;">
+Notifications </a><br><br>
+<a href="#" class="govuk-body govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" style="text-decoration: none;">
+Official Search of Part with Priority </a><br><br>
+<a href="#" class="govuk-body govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" style="text-decoration: none;">
+Official Search of Whole with Priority </a><br><br>
+<hr style="width: 550px;">
+</div>
+
+
+
+<div class="govuk-grid-column-one-quarter">
+<a class="govuk-!-font-size-24 govuk-link govuk-link--no-visited-state" href="mywork" style="font-color: #035EA5">
+PDF Downloads
+</a>
+<br>
+<br>
+
+<a href="#" class="govuk-body govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" style="text-decoration: none;">
+Request official copies </a><br><br>
+<a href="#" class="govuk-body govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" style="text-decoration: none;">
+Historical copies </a><br><br><br>
+<a href="#" class="govuk-body govuk-!-font-size-19 govuk-link govuk-link--no-visited-state" style="text-decoration: none;">
+MapSearch </a><br><br>
+</div>
+
+
+
+<div class="govuk-grid-column-one-quarter">
+<div style="background-color: rgba(252,185,112, 0.3); padding-top: 1px; padding-bottom: 15px; padding-left: 15px; margin-bottom: 5px;">
+<h3 style="font-size: 19px; font-family: arial; font-weight:normal;">Service hours</h3>
+<a href="#" style="font-size: 14px;"> Service availability and planned maintenance </a>
+</div>
+
+<div style="background-color: rgba(221,230,96, 0.4); padding-top: 1px; padding-bottom: 15px; padding-left: 15px;">
+<h3 style="font-size: 19px; font-family: arial; font-weight:normal;">Fair processing</h3>
+<a href="#" style="font-size: 14px;"> Use of information for fraud prevention and protection of public funds
+ </a>
+</div>
+
+
+<div style="background-color: rgba(243,250,233,1); padding-top: 1px; padding-bottom: 15px; padding-left: 15px; margin-top: 5px;">
+<h3 style="font-size: 19px; font-family: arial; font-weight:normal;">Personal information</h3>
+<p style="font-size: 14px;"> If you or your clients require information on how HM Land Registry processes personal information under the Data Protection Act 2018, please see our <a href="#" >Personal information charter.</a>
+ </p>
+</div>
+</div>
+
+<div class="govuk-grid-column-one-quarter">
+  <br>
+  <br>
+</div>
+
+
+<div class="govuk-grid-column-one-half" style="margin-top: -175px;">
+
+<h3 class="govuk-!-font-size-21" style="font-family: arial;"> Current despatch details</h3>
+<p class="govuk-body govuk-!-font-size-16">
+Despatch address:<br>
+IS TEST ACCOUNT - DO NOT CLOSE<br>
+SEATON COURT<br>
+PLYMOUTH<br>
+PL6 5WS<br>
+<br>
+Any postal search results, official copies etc ordered through business e-services will be sent to this address unless this address is changed. See Administrative services.<br>
+<br>
+Direct debit<br>
+All charges incurred will be charged to the default Variable Direct Debit (Key # 2244095) unless this is changed. See Administrative services.
+
+</div>
+
+<div class="govuk-grid-column-one-quarter">
+  <br>
+</div>
+
+
+<!-- Footer -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  <br>
+  <br>
+  <hr>
+
+
+<br>
+  <a href="#" style="text-color: grey; text-decoration: none;"> Terms and conditions</a>
+  <a href="#" style="text-color: grey; text-decoration: none;">| Freedom of information</a>
+  <a href="#" style="text-color: grey; text-decoration: none;">| © Crown copyright </a>
+
+  <a style="float:right;" href="/prototype-admin/clear-data"> Clear data </a>
+  </div>
+
+
+</div>
+
+</div>
+
+
+
+{% endblock %}

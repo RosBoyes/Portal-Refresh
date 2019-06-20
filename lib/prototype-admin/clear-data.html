@@ -1,0 +1,29 @@
+
+
+
+
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Clear data? - GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block content %}
+
+<form method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-m">
+        Clear data?
+      </h1>
+        <h2 class="govuk-heading-s" style="font-weight: normal;">This will clear all of the data entered in this session. </h2>
+        <br>
+
+      <button class="govukButton" style="width: 175px; height: 50px; font-size: 16px; font-weight: bold;"> Clear the data </button>
+
+    </div>
+  </div>
+</form>
+
+{% endblock %}
