@@ -1,4 +1,5 @@
 {% extends "layout_unbranded.html" %}
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
 
 
 {% block pageTitle %}
@@ -228,23 +229,82 @@ for (i = 0; i < coll.length; i++) {
 
 
       <div style="padding-bottom: 10px; font-family: arial; font-size: 16px;">
-      <label> Type </label>
-      <label style="padding-left: 275px;"> Progress </label>
       <label style="padding-left: 90px;">  Title number or customer reference </label>
       </div>
 
-    <select id="application-type" style="height: 30px; width: 300px; font-size: 16px;">
-      <option value="">All</option>
-      <option value="New lease">New lease</option>
-      <option value="Official copies">Official copies</option>
-      <option value="Official Search of Part">Official search of part with priority</option>
-      <option value="Official Search of Whole">Official search of whole with priority</option>
-      <option value="Register update">Register update</option>
-      <option value="Transfer of part">Transfer of part</option>
+    {{ govukCheckboxes({
+      idPrefix: "application-type",
+      name: "application-type",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "Type"
+        }
+      },
+      items: [
+        {
+          value: "New lease",
+          text: "New lease"
+        },
+        {
+          value: "Official copies",
+          text: "Official copies"
+        },
+        {
+          value: "Official search of part with priority",
+          text: "Official search of part with priority"
+        },
+        {
+          value: "Official search of whole with priority",
+          text: "Official search of whole with priority"
+        },
+        {
+          value: "Register update",
+          text: "Register update"
+        },
+        {
+          value: "Transfer of part",
+          text: "Transfer of part"
+        }
+      ]
+    }) }}
 
-
-    </select>
-
+    {{ govukCheckboxes({
+      idPrefix: "application-progress",
+      name: "application-progress",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "Progress"
+        }
+      },
+      items: [
+        {
+          value: "Received",
+          text: "Received"
+        },
+        {
+          value: "In progress",
+          text: "In progress"
+        },
+        {
+          value: "Requisition issued",
+          text: "Requisition issued"
+        },
+        {
+          value: "Notice(s) issued",
+          text: "Notice(s) issued"
+        },
+        {
+          value: "Delayed",
+          text: "Delayed"
+        },
+        {
+          value: "Complete",
+          text: "Complete"
+        }
+      ]
+    }) }}
 
     <select id="application-progress" style="height: 30px; width: 170px; font-size: 16px;">
       <option value="">All</option>
@@ -283,11 +343,11 @@ for (i = 0; i < coll.length; i++) {
 <thead class="govuk-table__head">
 <tr class="govuk-table__row" style="font-size:14px; background-color: #dee0e2">
 <th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
-<th class="govuk-table__header govuk-!-width-one-eighth sortable" scope="col" id="Title">Title number</th>
-<th class="govuk-table__header govuk-!-width-one-eighth  sortable" scope="col">Customer reference</th>
-<th class="govuk-table__header govuk-!-width-one-fifth sortable" scope="col">Type</th>
+<th class="govuk-table__header govuk-!-width-one-eighth " scope="col" id="Title">Title number</th>
+<th class="govuk-table__header govuk-!-width-one-eighth  " scope="col">Customer reference</th>
+<th class="govuk-table__header govuk-!-width-one-fifth " scope="col">Type</th>
 <th class="govuk-table__header govuk-!-width-one-sixth  sortable" scope="col">Received by HMLR</th>
-<th class="govuk-table__header govuk-!-width-one-quarter  sortable" scope="col">Progress</th>
+<th class="govuk-table__header govuk-!-width-one-quarter  " scope="col">Progress</th>
 <th class="govuk-table__header govuk-!-width-one-eighth  sortable" scope="col">Estimated completion*</th>
 <th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
 </tr>
@@ -320,7 +380,7 @@ for (i = 0; i < coll.length; i++) {
 <tr class="govuk-table__row ">
 <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
 <td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Curtis.12334</td>
+<td class="govuk-table__cell">Brown.12334</td>
 <td class="govuk-table__cell">New lease</td>
 <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
 <td  class="govuk-table__cell"> <t class="govuk-tag--delayed"> Requisition issued </t></td>

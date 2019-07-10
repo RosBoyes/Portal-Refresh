@@ -140,19 +140,19 @@ a:visited {
 
 .sortable {
   &:after {
-    content: '  ↕'
+    content: '▼▲'
 
   }
 }
 
 .sortable--asc {
   &:after {
-    content: '  ↑';
+    content: '  ▲';
   }
 }
 
 .sortable--desc {
   &:after {
-    content: '  ↓';
+    content: '  ▼';
   }
 }
