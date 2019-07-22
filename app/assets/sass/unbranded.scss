@@ -15,60 +15,48 @@ $govuk-page-width: 1200px;
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/docs/examples/blank-unbranded
 
-.govuk-tag--progress {
-
-  color: black;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-transform: capitilize;
-}
 
 .govuk-tag--delayed {
   background-color: rgba(163,24,38,1);
   color: white;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  text-transform: capitilize;
+  font-weight: bold;
 }
 
-.govuk-tag--complete {
+.govuk-tag--delayed-date {
+  color: rgba(163,24,38,1);
 
-  color: black;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-transform: capitilize;
+  font-weight: bold;
 }
+
+
+
 
 #search-button {
-  width: 150px;
+  width: 45px;
   height: 40px;
-  background-color:  #006435;
+  background-color:  #01823B;
   color: white;
-  font-size: 19px;
-  margin-right: 20px;
-  box-shadow: none;
-  border-color: #00331B;
-  border-bottom-width: 2px;
+  font-size: 25px;
+  margin-left: 3px;
+  border-color: #01823B;
+  border-radius: 3px;
 
 
 }
 
 #search-button:hover {
-  width: 150px;
+  width: 45px;
   height: 40px;
-  background-color: #006435;
-  border-color: #00331B;
-  border-bottom-width: 2px;
-  font-size: 19px;
+  background-color: #027333;
+  border-color: #027333;
   color: white;
-  margin-right: 20px;
-  box-shadow: 1px 1px 1px black
+  font-size: 25px;
+    border-radius: 3px;
+
 }
 
 .hide-row {
@@ -94,9 +82,9 @@ $govuk-page-width: 1200px;
 }
 
 .my-work tbody td {
-  font-weight: bold;
+
   border-bottom: 0;
-  border-top: 1px solid #ddd;
+  border-top: 2px solid #ddd;
 }
 
 .my-work tbody tr {
@@ -140,19 +128,45 @@ a:visited {
 
 .sortable {
   &:after {
-    content: '  ↕'
+    content: '▼▲'
 
   }
 }
 
 .sortable--asc {
   &:after {
-    content: '  ↑';
+    content: '  ▲';
   }
 }
 
 .sortable--desc {
   &:after {
-    content: '  ↓';
+    content: '  ▼';
   }
+}
+
+.filter {
+  font-size: 16px;
+  background-color: none;
+  border-color: black;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: px;
+  text-align: left;
+}
+
+.filter:after {
+  content: '  +'
+
+}
+
+.active:after {
+  content: '  -'
+}
+
+.govuk-checkboxes__label {
+  font-size: 16px;
 }
