@@ -26,31 +26,37 @@ $govuk-page-width: 1200px;
   font-weight: bold;
 }
 
+.govuk-tag--delayed-date {
+  color: rgba(163,24,38,1);
+
+  font-weight: bold;
+}
+
+
 
 
 #search-button {
-  width: 100px;
+  width: 45px;
   height: 40px;
-  background-color:  darkgrey;
+  background-color:  #01823B;
   color: white;
   font-size: 25px;
-  margin-right: 0;
-  box-shadow: none;
-  border-color: #595959;
-  border-bottom-width: 2px;
+  margin-left: 3px;
+  border-color: #01823B;
+  border-radius: 3px;
 
 
 }
 
 #search-button:hover {
-  width: 100px;
+  width: 45px;
   height: 40px;
-  background-color:  darkgrey;
+  background-color: #027333;
+  border-color: #027333;
   color: white;
   font-size: 25px;
-  margin-right: 0;
-  box-shadow: none;
-  box-shadow: 1px 1px 1px #595959
+    border-radius: 3px;
+
 }
 
 .hide-row {
@@ -140,10 +146,10 @@ a:visited {
 }
 
 .filter {
-  font-size: 18px;
-  background-color: lightgrey;
-  border-color: none;
-  border-radius: 3px;
+  font-size: 16px;
+  background-color: none;
+  border-color: black;
+  border-radius: 2px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -159,4 +165,8 @@ a:visited {
 
 .active:after {
   content: '  -'
+}
+
+.govuk-checkboxes__label {
+  font-size: 16px;
 }

@@ -93,7 +93,7 @@
       filterTable(searchBox.value, [1, 2])
     }
 
-    // paginate
+//     // paginate
     resultSet = Array.prototype.slice.call(rows).filter(function(row) {
       return !row.classList.contains('govuk-visually-hidden')
     })
