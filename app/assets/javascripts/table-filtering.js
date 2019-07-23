@@ -103,6 +103,7 @@
       // Find the rows that are not on the current page, and hide them
       previousPageRows = resultSet.slice(0, page * rpp)
       subsequentPageRows = resultSet.slice((page + 1) * rpp)
+      
 
       previousPageRows.concat(subsequentPageRows).forEach(function(row) {
         row.classList.add('govuk-visually-hidden')
@@ -147,7 +148,7 @@
           link.setAttribute('data-page', i)
           link.addEventListener('click', function(e) {
             e.preventDefault()
-            page = this.getAttribute('data-page')
+            page = parseInt(this.getAttribute('data-page'))
             updateSearch()
           })
           pagination.appendChild(link)
