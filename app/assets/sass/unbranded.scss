@@ -148,15 +148,15 @@ a:visited {
 
 .filter {
   font-size: 16px;
-  background-color: none;
-  border-color: none;
+  background: transparent;
+  border: 0;
   border-radius: 2px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
-  height: px;
   text-align: left;
+  text-decoration: underline;
 }
 
 .filter:after {
