@@ -159,12 +159,12 @@ a:visited {
 }
 
 .filter:after {
-  content: '  +'
+  content: '  ▼'
 
 }
 
 .active:after {
-  content: '  -'
+  content: '  ▲'
 }
 
 .govuk-checkboxes__label {
