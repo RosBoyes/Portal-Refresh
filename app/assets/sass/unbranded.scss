@@ -36,12 +36,12 @@ $govuk-page-width: 1200px;
 
 
 #search-button {
-  width: 45px;
+  width: 100px;
   height: 40px;
   background-color:  #01823B;
   color: white;
   font-size: 25px;
-  margin-left: 3px;
+  margin-left: 0px;
   border-color: #01823B;
   border-radius: 3px;
 
@@ -50,7 +50,7 @@ $govuk-page-width: 1200px;
 
 
 #search-button:hover {
-  width: 45px;
+  width: 100px;
   height: 40px;
   background-color: #027333;
   border-color: #027333;
