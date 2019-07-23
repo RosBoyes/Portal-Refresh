@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 {% extends "layout_unbranded.html" %}
+{% from "checkboxes/macro.njk" import govukCheckboxes %}
 
 
 {% block pageTitle %}
-
 {% endblock %}
 
 {% block content %}
@@ -10,6 +11,7 @@
 <!-- Back & clear data top -->
 <div class="govuk-width-container">
    <a href="index.html" class="govuk-back-link">Back to Index</a>
+   <meta charset="utf-8"/>
 
 
 <!-- Phase banner ----->
@@ -22,13 +24,14 @@
      </span>
    </p>
  </div>
+ </div>
  <br>
  <br>
 
 <!-- Header -->
   <div class="govuk-grid-row" >
   <div class="govuk-grid-column-full" id="headerdiv">
-  <img src="public/images/headerlogo.svg">
+  <img src="public/images/headerlogo.svg" alt="hmlrlogo">
   <br>
   <a href="#" style="float: right; font-size: 14px; font-weight: ; margin-top: -15px;"> Logout </a>
 
@@ -129,7 +132,7 @@
 
   /* Style the button that is used to open and close the collapsible content */
   .collapsible {
-    background-color: none;
+    background-color: white;
     cursor: pointer;
     height: 30px;
     border: none;
@@ -144,7 +147,7 @@
   }
 
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
+  .collapsible:hover {
     background-color: #D4E039;
   }
 
@@ -204,7 +207,7 @@ for (i = 0; i < coll.length; i++) {
 <!-- Service title -->
 
   <div class="govuk-grid-column-three-quarters">
-<h1 class="govuk-body govuk-!-font-size-27" style="font-family: arial; padding-top: 5px;"> </h1>
+<h1 class="govuk-body govuk-!-font-size-27" style="font-family: arial; padding-top: 5px;">  </h1>
 
 
 
@@ -212,65 +215,124 @@ for (i = 0; i < coll.length; i++) {
 
 <!---CONTENT----------------------------------------------------------------->
 
-
+<h2 class="govuk-body govuk-!-font-size-21" style="font-family: arial; padding-top: 5px; font-style: italic;"> View your Portal applications. </h2>
 
 <!--Filters & searches-->
 
 <div>
 
-<div>
+<div class="govuk-grid-row">
+
   <form id="search">
+    <label class="govuk-label" style="font-weight: bold; padding-bottom: ">  </label><br>
+      <div class="govuk-grid-column-one-quarter" >
+        <br>
+        <br>
+        <button class="filter">Filter by type</button>
+        <div class="content">
+    {{ govukCheckboxes({
+      idPrefix: "application-type",
+      name: "application-type",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: ""
+        }
+      },
+      items: [
+      {
+        value: "Dealing",
+        text: "Dealing"
+      },
+        {
+          value: "Dispositionary First Lease",
+          text: "Dispositionary First Lease"
+        },
+        {
+          value: "Official Copies",
+          text: "Official Copies"
+        },
+        {
+          value: "Official Search of Part with Priority",
+          text: "Official Search of Part with Priority"
+        },
+        {
+          value: "Official Search of Whole with Priority",
+          text: "Official Search of Whole with Priority"
+        },
+        {
+          value: "Search of the Index Map",
+          text: "Search of the Index Map"
+        },
+        {
+          value: "Transfer of Part",
+          text: "Transfer of Part"
+        }
+      ]
+    }) }}
+</div>
+    </div>
 
-      <div style="font-family: arial; font-size: 16px;">
-      <h2 style="margin-right; font-size: 16px; font-weight: normal; float:left;"><b>Filter by</b> </h2>
-      <h2 style="margin-right; font-size: 16px; font-weight: normal; padding-left: 475px;"> <br><b> Search by</b> </h2>
-      </div>
+
+    <div class="govuk-grid-column-one-quarter">
+      <br>
+      <br>
+      <button class="filter progressfilter">Filter by progress</button>
+      <div class="content">
 
 
-      <div style="padding-bottom: 10px; font-family: arial; font-size: 16px;">
-      <label> Type </label>
-      <label style="padding-left: 275px;"> Progress </label>
-      <label style="padding-left: 90px;">  Title number or customer reference </label>
-      </div>
+    {{ govukCheckboxes({
+      idPrefix: "application-progress",
+      name: "application-progress",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: ""
+        }
+      },
+      items: [
+        {
+          value: "Received",
+          text: "Received"
+        },
+        {
+          value: "In progress",
+          text: "In progress"
+        },
+        {
+          value: "Cancelled",
+          text: "Cancelled"
+        },
+        {
+          value: "Delayed",
+          text: "Delayed"
+        },
+        {
+          value: "Complete",
+          text: "Complete"
+        }
+      ]
+    }) }}
+    </div>
+    </div>
 
-    <select id="application-type" style="height: 30px; width: 300px; font-size: 16px;">
-      <option value="">All</option>
-      <option value="New lease">New lease</option>
-      <option value="Official copies">Official copies</option>
-      <option value="Official Search of Part">Official search of part with priority</option>
-      <option value="Official Search of Whole">Official search of whole with priority</option>
-      <option value="Register update">Register update</option>
-      <option value="Transfer of part">Transfer of part</option>
+    <div class="govuk-grid-column-one-half">
+    <label class="govuk-label govuk-!-font-size-16" style="float: right; font-style: italic;"> Search by Customer reference or Title number </label><br><br>
+
+    <input type="text" id="search-input" style="width: 280px; height: 35px; font-size: 16px; padding-left: 0px; float: left; margin-left: 40px; border-color: black; border-width: 1px; border-radius: 2px;">
+      <button  id="search-button" style="float: right; font-size: 19px;"> Search </button>
+    </div>
 
 
-    </select>
 
-
-    <select id="application-progress" style="height: 30px; width: 170px; font-size: 16px;">
-      <option value="">All</option>
-      <option value="Received">Received</option>
-      <option value="In progress">In progress</option>
-      <option value="Requisition issued">Requisition issued</option>
-      <option value="Notice(s) issued">Notice(s) issued</option>
-      <option value="Delayed">Delayed</option>
-      <option value="Complete">Complete</option>
-    </select>
-
-
-    <input type="text" id="search-input" style="width: 250px; height: 25px; font-size: 16px; padding-left: 5px;">
-    <br>
-    <br>
-    <input type="checkbox" id="hide-viewed" value="application-viewed">
-    <label for="hide-viewed" style="font-family: arial; font-size: 16px;"> Hide viewed applications and requests </label>
-
-    <br>
-    <br>
-    <button id="search-button">Search</button>
-    <a href="#" id="reset">Reset search</a>
-
-  </form>
 <br>
-
+<br>
+<br>
+<a href="#" id="reset" style="float: right; padding-right: 15px; padding-top: 15px; padding-bottom: 20px;">Reset search and filters</a>
+<br>
+  </form>
+  <br>
+  <br>
 
 
 </div>
@@ -286,245 +348,506 @@ for (i = 0; i < coll.length; i++) {
 <thead class="govuk-table__head">
 <tr class="govuk-table__row" style="font-size:14px; background-color: #dee0e2">
 <th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
-<th class="govuk-table__header govuk-!-width-one-eighth sortable" scope="col" id="Title">Title number</th>
-<th class="govuk-table__header govuk-!-width-one-eighth  sortable" scope="col">Customer reference</th>
-<th class="govuk-table__header govuk-!-width-one-fifth sortable" scope="col">Type</th>
+<th class="govuk-table__header govuk-!-width-one-eighth " scope="col" id="Title">Title number</th>
+<th class="govuk-table__header govuk-!-width-one-eighth  " scope="col">Customer reference</th>
+<th class="govuk-table__header govuk-!-width-one-quarter " scope="col">Application type</th>
 <th class="govuk-table__header govuk-!-width-one-sixth  sortable" scope="col">Received by HMLR</th>
-<th class="govuk-table__header govuk-!-width-one-quarter  sortable" scope="col">Progress</th>
+<th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Application progress</th>
 <th class="govuk-table__header govuk-!-width-one-eighth  sortable" scope="col">Estimated completion*</th>
 <th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
 </tr>
 </thead>
 
-<tbody class="govuk-table__body">
+{% macro rows(page) %}
+  <!-- 1 --> <tbody class="govuk-table__body">
 
-<tr class="govuk-table__row">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP123456</td>
-<td class="govuk-table__cell">Jones.20313</td>
-<td class="govuk-table__cell">Register update</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-06-15">15/06/19</td>
-<td class="govuk-table__cell" scope="row"><label class="govuk-tag--progress"> Received</label></td>
-<td class="govuk-table__cell" style="padding-left: 10px;"  data-sortable="2019-08-21">21/08/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
-
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;">Correspondence will appear here.</p>  </td>
-</tr>
-
-</tbody>
-<tbody class="govuk-table__body">
-
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Curtis.12334</td>
-<td class="govuk-table__cell">New lease</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
-<td  class="govuk-table__cell"> <t class="govuk-tag--delayed"> Requisition issued </t></td>
-<td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
-
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">897.153.8127</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;"> 28/05/19 - <a href="#"> Requisition </a></p>  </td>
-</tr>
-
-</tbody>
-<tbody class="govuk-table__body viewed">
-
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP54312</td>
-<td class="govuk-table__cell">Bartlett.23124</td>
-<td class="govuk-table__cell">Official Copies</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
-<td class="govuk-table__cell" scope="row">  Not applicable </td>
-<td class="govuk-table__cell" style="padding-left: 10px;">Not applicable </td>
+  <tr class="govuk-table__row">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP123456 <!-- THIS IS PAGE {{page}} --></td>
+  <td class="govuk-table__cell">Jones.20313</td>
+  <td class="govuk-table__cell">Dealing</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-06-15">15/06/19</td>
+  <td class="govuk-table__cell" scope="row"><label class="govuk-tag--delayed">Delayed</label></td>
+  <td class="govuk-table__cell" style="padding-left: 10px;"  data-sortable="2019-11-21"><label class="govuk-tag--delayed-date"> 21/11/19</label></td>
   <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
+  </tr>
 
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+      </td>
+    <div>
+    <!-- HMLR reference -->
+
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">562.182.9891 </p></td>
+
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2">
+            <b>Correspondence</b>
+            <p style="font-size: 14px;"><br>
+            <a href="#"> Notice(s) issued on 22/08/19</a><br>
+            <a href="#"> Notice(s) issued on 12/07/19</a>
+          </p></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Files</b><br><br><br>
+            <p style="font-size: 14px;">
+
+            </p></td>
+
+      </div>
+      </tr>
+  </tbody>
+
+  <tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell">Brown.12334</td>
+  <td class="govuk-table__cell">Dispositionary First Lease</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
+  <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> Received </t></td>
+  <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
+
+
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+  </td>
+    <div>
+    <!-- HMLR reference -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">98.986.HJ98B </p>
+            </td>
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2">
+            <b>Correspondence</b>
+            <p style="font-size: 14px;"><br>
+            <br><br>
+            <a href="#"></a>
+          </p></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Files</b>
+            <p style="font-size: 14px;">
+              <br>
+              <br>
+            </p></td>
+
+      </div>
+      </tr>
+
+  </tbody>
+
+  <tbody class="govuk-table__body">
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP09209</td>
+  <td class="govuk-table__cell">Bartlett.23124</td>
+  <td class="govuk-table__cell">Official Copies</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
+  <td class="govuk-table__cell" scope="row">   </td>
+  <td class="govuk-table__cell" style="padding-left: 10px;">  </td>
+    <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
+
+
+
+      <tr class="govuk-table__row expandy-row hide-row">
+        <!-- Vertical line -->
+        <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+  </td>
+        <div>
+        <!-- HMLR reference -->
+                <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+                <b> HMLR Reference</b><br><br>
+
+                <p style="font-size: 14px;">980.907.A8H </p></td>
+
+        <!-- Correspondence -->
+              <td class="govuk-table__cell" colspan="2">
+                <b>Correspondence</b>
+                <p style="font-size: 14px;">
+                <a href="#"></a>
+                <a href="#"></a>
+                <br>
+                <br>
+                <br>
+              </p></td>
+        <!-- Files -->
+                <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+                <b>Files</b>
+                <p style="font-size: 14px;">
+                  <br>
+                  <a href="#"> Official Copy - Title plan</a><br>
+                  <a href="#"> Official Copy - Register</a>
+
+
+                </p></td>
+
+          </div>
+          </tr>
+
+      </tbody>
+
+  <tbody class="govuk-table__body ">
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell">Watkins.12334</td>
+  <td class="govuk-table__cell">Official Search of Whole with Priority</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-06-13">13/06/19</td>
+  <td  class="govuk-table__cell" scope="row"><text class="govuk-tag--complete"> </text></td>
+  <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable=""></td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
+
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 150px;"></div>
+  </td>
+    <div>
+
+
+    <!-- HMLR reference -->
+
+            <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
+            <br>  <b> Priority Period<br> </b>13 Jun 2019 - 13 Jul 2019 <br><br><br>
+
+
+
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">823.003.432B </p>
+            </td>
+
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <br><br><br><br><br>
+            <b>Correspondence</b>
+
+            <p style="font-size: 14px;"><br><br>
+
+          </p></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <br><br><br><br>
+            <b>Files</b>
+            <p style="font-size: 14px;">
+              <br>
+              <a href="#"> Search result</a>
+            </p></td>
+
+      </div>
+
+      </tr>
+
+  </tbody>
+
+  <!-- 5 --><tbody class="govuk-table__body ">
+
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP451734</td>
+  <td class="govuk-table__cell">Smith.20313</td>
+  <td class="govuk-table__cell">Dealing</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
+  <td class="govuk-table__cell"scope="row"> <label class="govuk-tag--delayed">Delayed </label> </td>
+  <td class="govuk-table__cell" style="padding-left: 10px;"  data-sortable="2019-10-20"><label class="govuk-tag--delayed-date">20/10/19</label></td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
 <tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 0px;"><b>HMLR Reference</b>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 0px;"><br><b>Correspondence</b>
-  <p style="font-size: 14px;"><br> 01/01/19 - <a href="#"> Title plan view </a></p><p style="font-size: 14px;"> 01/01/19 - <a href="#"> Lease </a></p>  </td>
-</tr>
+  <!-- Vertical line -->
+  <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+    <div>
+        </td>
+      <div>
+    <!-- HMLR reference -->
+            <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">872.143.1JA </p>
+            </td>
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Correspondence</b>
+            <a href="#" style="font-size: 14px;"><br><br>
+              Requisition(s) issued on 29/06/19<br><br>
+          </a></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Files</b>
+            <p style="font-size: 14px;">
 
-</tbody>
-<tbody class="govuk-table__body viewed">
+              <a href="#"></a>
+              <br>
+              <br>
+            </p></td>
 
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Watkins.12334</td>
-<td class="govuk-table__cell">Official search of whole with priority</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-06-13">13/06/19</td>
-<td  class="govuk-table__cell" scope="row"><text class="govuk-tag--complete">Complete </text></td>
-<td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-06-13">13/06/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
-
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;">Correspondence will appear here.</p>  </td>
-</tr>
-
-</tbody>
-<tbody class="govuk-table__body viewed">
+      </div>
+    </tr>
 
 
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP123456</td>
-<td class="govuk-table__cell">Smith.20313</td>
-<td class="govuk-table__cell">Register update</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
-<td class="govuk-table__cell"scope="row"> <t class="govuk-tag--delayed"> Requisition issued </t> </td>
-<td class="govuk-table__cell" style="padding-left: 10px;"  data-sortable="2019-09-12">12/09/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
+  </tbody>
 
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;"> 20/06/19 - <a href="#"> Requisition </a></p>  </td>
-</tr>
+  <tbody class="govuk-table__body ">
 
-</tbody>
-<tbody class="govuk-table__body viewed">
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP54312</td>
+  <td class="govuk-table__cell">Curtis.15439</td>
+  <td class="govuk-table__cell">Transfer of Part</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
+  <td class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress </t> </td>
+  <td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-08-15"> 15/08/19</td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
 
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP54312</td>
-<td class="govuk-table__cell">Brown.23124</td>
-<td class="govuk-table__cell">Transfer of part</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
-<td class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress </t> </td>
-<td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-08-15"> 15/08/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+      </td>
+      <div>
+        <div>
+      <!-- HMLR reference -->
+              <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
+              <b> HMLR Reference</b>
+              <br><br>
+              <p style="font-size: 14px;">982.988.129C </p>
+              </td>
+      <!-- Correspondence -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <b>Correspondence</b>
+              <a href="#" style="font-size: 14px;"><br><br>
+                <br><br>
+            </a></td>
+      <!-- Files -->
+              <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <b>Files</b>
+              <p style="font-size: 14px;">
 
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;">Correspondence will appear here.</p>  </td>
-</tr>
+                <a href="#"></a>
+                <br>
+                <br>
+              </p></td>
 
-</tbody>
-<tbody class="govuk-table__body viewed">
+        </div>
+      </tr>
 
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Franklin.17234</td>
-<td class="govuk-table__cell">Official search of part with priority</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-06-11">11/06/19</td>
-<td class="govuk-table__cell">  Not applicable  </td>
-<td class="govuk-table__cell"style="padding-left: 10px;">Not applicable</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
+    </tbody>
 
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;">Correspondence will appear here.</p>  </td>
-</tr>
+  <tbody class="govuk-table__body ">
 
-</tbody>
-<tbody class="govuk-table__body viewed">
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell">Franklin.17234</td>
+  <td class="govuk-table__cell">Official Search of Part with Priority</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-04-10">10/04/19</td>
+  <td class="govuk-table__cell"> Cancelled </td>
+  <td class="govuk-table__cell"style="padding-left: 10px;"></td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
 
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Terry.43123</td>
-<td class="govuk-table__cell">Register update</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-05-11">11/05/19</td>
-<td  class="govuk-table__cell"> <label > Notice(s) issued</label></td>
-<td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-06-01">01/06/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
-
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;">Correspondence will appear here.</p>  </td>
-</tr>
-
-</tbody>
-<tbody class="govuk-table__body viewed">
-
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Johnson.12334</td>
-<td class="govuk-table__cell">Register update</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-04-05">05/04/19</td>
-<td class="govuk-table__cell"> <label class="govuk-tag--complete">Complete</label> </td>
-<td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-06-08">08/06/19</td>
-<td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
-
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;"> 08/06/19 - <a href="#"> View files </a></p>  </td>
-</tr>
-
-</tbody>
-<tbody class="govuk-table__body viewed">
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 150px;"></div>
+      </td>
+    <div>
 
 
-<tr class="govuk-table__row ">
-<td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-<td class="govuk-table__cell" scope="row">LP980123</td>
-<td class="govuk-table__cell">Colbrook.12334</td>
-<td class="govuk-table__cell">New lease</td>
-<td class="govuk-table__cell" scope="row" data-sortable="2019-05-01">01/05/19</td>
-<td  class="govuk-table__cell"> <label class="govuk-tag--complete">Complete</label> </td>
-<td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-05-29">29/05/19</td>
-<td class="govuk-table__cell" scope="row" ><a class="expandy-row-trigger" href="#">View details</a></td>
-</tr>
+    <!-- HMLR reference -->
 
-<tr class="govuk-table__row expandy-row hide-row">
-  <td class="govuk-table__cell" colspan="1"><div class="vertical"></div>
-  <td class="govuk-table__cell" colspan="3" style="padding-top: 25px;">HMLR Reference<br><br>
-  <p style="font-size: 14px;">562.182.9891</p>  </td>
-  <td class="govuk-table__cell" colspan="4" style="padding-left: 0px; padding-top: 25px;">Correspondence<br><br>
-  <p style="font-size: 14px;"> 29/05/19 - <a href="#"> View files </a></p>  </td>
-</tr>
+            <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
+            <br>  <b> Priority Period<br> </b>10 May 2019 - 21 Jun 2019 <br><br><br>
 
-</tbody>
+
+
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">876.123.533W </p>
+            </td>
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <br><br><br><br><br>
+            <b>Correspondence</b><br><br>
+
+            <a href="#" style="font-size: 14px;">Notification of Cancellation<br><br>
+
+          </a></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <br><br><br><br>
+            <b>Files</b>
+            <p style="font-size: 14px;">
+              <br>
+              <a href="#"> Search result</a>
+            </p></td>
+
+      </div>
+
+      </tr>
+
+  </tbody>
+
+  <tbody class="govuk-table__body ">
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP72912</td>
+  <td class="govuk-table__cell">Terry.43123</td>
+  <td class="govuk-table__cell">Search of the Index Map</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-05-11">11/05/19</td>
+  <td  class="govuk-table__cell"> <label ></label></td>
+  <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable=""></td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
+
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+      </td>
+    <div>
+
+    <!-- HMLR reference -->
+            <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">897.452.678Ks </p>
+
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Correspondence</b>
+            <p style="font-size: 14px;"><br><br>
+
+          </p></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Files</b>
+            <p style="font-size: 14px;">
+              <br>
+              <a href="#"> Search result</a>
+            </p></td>
+
+      </div>
+      </tr>
+
+  </tbody>
+
+  <tbody class="govuk-table__body ">
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP890543</td>
+  <td class="govuk-table__cell">Johnson.12334</td>
+  <td class="govuk-table__cell">Dealing</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-04-05">05/04/19</td>
+  <td class="govuk-table__cell"> <label class="govuk-tag--complete">Complete</label> </td>
+  <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-06-08">08/06/19</td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
+
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+      </td>
+    <div>
+    <!-- HMLR reference -->
+
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">897.576.89M </p>
+            </td>
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2">
+            <b>Correspondence</b>
+            <p style="font-size: 14px;"><br>
+            <a href="#"> Requisition(s) issued on 22/05/19</a><br><br>
+          </p></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Files</b><br><br><br>
+            <p style="font-size: 14px;">
+
+            </p></td>
+
+      </div>
+      </tr>
+
+  </tbody>
+
+  <!-- 10 --><tbody class="govuk-table__body ">
+
+
+  <tr class="govuk-table__row ">
+  <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
+  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell">Colbrook.12334</td>
+  <td class="govuk-table__cell">Dispositionary First  Lease</td>
+  <td class="govuk-table__cell" scope="row" data-sortable="2019-05-01">01/05/19</td>
+  <td  class="govuk-table__cell"> <label class="govuk-tag--complete">Complete</label> </td>
+  <td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-05-09">09/04/19</td>
+  <td class="govuk-table__cell" scope="row" ><a class="expandy-row-trigger" href="#">View details</a></td>
+  </tr>
+
+  <tr class="govuk-table__row expandy-row hide-row">
+    <!-- Vertical line -->
+    <td class="govuk-table__cell" colspan="1" ><div class="vertical" style="height: 100px;"></div>
+</td>
+    <div>
+    <!-- HMLR reference -->
+
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b> HMLR Reference</b>
+            <br><br>
+            <p style="font-size: 14px;">982.876.456E </p>
+            </td>
+    <!-- Correspondence -->
+          <td class="govuk-table__cell" colspan="2">
+            <b>Correspondence</b>
+            <p style="font-size: 14px;"><br>
+              <br>
+              <br>
+          </p></td>
+    <!-- Files -->
+            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <b>Files</b><br><br><br>
+            <p style="font-size: 14px;">
+
+            </p></td>
+
+      </div>
+      </tr>
+
+  </tbody>
+
+{% endmacro %}
+
+{{rows(1)}}
+{# {{rows(2)}}
+{{rows(3)}}
+{{rows(4)}}
+{{rows(5)}} #}
 
 </table>
 
 <div>
-*<a href="#" class="govuk-link" style="font-size: 14px;"> View average completion times </a>
+*<a href="averagetimes.html" class="govuk-link" style="font-size: 14px;"> View average completion times </a>
 
-<a style="float: right; cursor: pointer;"> < 1 ></a>
+
+<div id="pagination" style="float: right;"></div>
 </div>
 
 
