@@ -103,7 +103,7 @@
       // Find the rows that are not on the current page, and hide them
       previousPageRows = resultSet.slice(0, page * rpp)
       subsequentPageRows = resultSet.slice((page + 1) * rpp)
-      
+
 
       previousPageRows.concat(subsequentPageRows).forEach(function(row) {
         row.classList.add('govuk-visually-hidden')

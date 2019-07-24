@@ -149,14 +149,14 @@ a:visited {
 .filter {
   font-size: 16px;
   background: transparent;
-  border: 0;
+  border: 1;
   border-radius: 2px;
   padding-left: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 100%;
   text-align: left;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .filter:after {
