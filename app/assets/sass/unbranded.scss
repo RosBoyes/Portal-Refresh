@@ -129,7 +129,7 @@ a:visited {
 
 .sortable {
   &:after {
-    content: '▼▲'
+    content: url('/public/images/sort.png');
 
   }
 }
