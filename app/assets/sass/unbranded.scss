@@ -171,3 +171,43 @@ a:visited {
 .govuk-checkboxes__label {
   font-size: 16px;
 }
+
+
+// Version 3 //
+
+    .shortcut-work {
+      padding: 20px;
+      border-radius: 3px;
+      color: black;
+      width: 250px;
+      font-weight: bold;
+      height: auto;
+      text-align: left;
+      background-image: url(/public/images/worklist.png);
+      background-repeat:  no-repeat;
+      background-position: 190px 10px;
+      background-size: 50px;
+    }
+
+    .shortcut-downloads {
+      padding: 20px;
+      border-radius: 3px;
+      width: 250px;
+      font-weight: bold;
+      height: auto;
+      text-align: left;
+      background-image: url(/public/images/pdf.png);
+      background-repeat:  no-repeat;
+      background-position: 190px 10px;
+      background-size: 50px;
+    }
+
+
+    .sub-shortcut {
+      font-style: black;
+      font-size: 19px;
+      border: transparent;
+      padding-left: 10px;
+
+
+    }
