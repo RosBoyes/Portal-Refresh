@@ -229,7 +229,9 @@ for (i = 0; i < coll.length; i++) {
         <br>
         <br>
         <button class="filter">Filter by type</button>
-        <div class="content collapsible">
+        <div class="content">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
     {{ govukCheckboxes({
       idPrefix: "application-type",
       name: "application-type",
@@ -272,14 +274,15 @@ for (i = 0; i < coll.length; i++) {
       ]
     }) }}
 </div>
+</div>
     </div>
 
 
     <div class="govuk-grid-column-one-quarter">
       <br>
       <br>
-      <button class="filter progressfilter">Filter by progress</button>
-      <div class="content">
+      <button class="filter">Filter by progress</button>
+      <div class="">
 
 
     {{ govukCheckboxes({

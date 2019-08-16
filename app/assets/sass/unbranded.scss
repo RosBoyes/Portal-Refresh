@@ -17,11 +17,12 @@ $govuk-page-width: 1200px;
 
 
 .govuk-tag--delayed {
-  background-color: rgb(81,85,87);
-  color: black;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
+  background-color: rgba(163,24,38,1);
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px
+  padding-top: 5px;
   font-weight: bold;
 }
 
