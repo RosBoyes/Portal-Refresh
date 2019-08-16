@@ -29,13 +29,13 @@
 <!-- Header -->
   <div class="govuk-grid-row" >
   <div class="govuk-grid-column-full" id="headerdiv">
-  <img src="public/images/headerlogo.svg">
+  <img src="public/images/headerlogo.svg" alt="HM Land Registry logo">
   <br>
   <a href="#" style="float: right; font-size: 14px; font-weight: ; margin-top: -15px;"> Logout </a>
 
   <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px;"> Customer Support </a>
 
-  <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px; padding-bottom: 0px;"> Jane Doe </a>
+  <!-- <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px; padding-bottom: 0px;"> Jane Doe </a> -->
 
 
   <hr style= "height: 4px;  background-image: linear-gradient(-60deg,#b4d307,#b4d307 50%,#d7e900 0,#d7e900); border: none;">
@@ -110,9 +110,15 @@
       </div><br>
 
       <!--Additional menu-->
-      <div style="padding-left: 10px;" id="submenu">
-
-      </div>
+      <!-- <div style="padding-left: 10px;" id="submenu">
+      <hr size="1" width="80%" align="left">
+      <br>
+      <a style="font-size: 14px"><font color="#000000">Service hours</font></a><br>
+      <br>
+      <a style="font-size: 14px"><font color="#000000">Fair processing</font></a><br>
+      <br>
+      <a style="font-size: 14px"><font color="#000000">Personal information</font></a><br>
+      </div> -->
 
   </div>
 
@@ -196,45 +202,57 @@
 <!-- Service title -->
 
   <div class="govuk-grid-column-three-quarters">
-<h1 class="govuk-body govuk-!-font-size-27" style="font-family: arial; margin-top: -15px;"></h1>
+<h1 class="govuk-!-font-size-27" style="font-family: arial; margin-top: 0px;">Go to...</h1>
 
 
 <!---CONTENT----------------------------------------------------------------->
 
 
 
-<h1 href="#" style="margin-top:;"></h1></div>
+<!-- <h1 href="#" style="margin-top:;"></h1> -->
+
+</div>
 
 <div class="govuk-grid-column-one-quarter">
-<button class="shortcut-work" href="#">
-<label class="govuk-!-font-size-19" style="font-family: arial;"> My Work </label>
-</button>
-<br>
-<br>
+  <div class="work-shortcut">
+    <a href="sessionone.html">
+      <h2 class="govuk-!-font-size-2" style="padding: 10px;"> My<br> Applications </h2>
+    </a>
+</div>
 
-<a href="#" class="govuk-!-font-size-16 govuk-link govuk-link--no-visited-state sub-shortcut"  style="text-decoration: none; margin-bottom: 5px;">
-Request Official Copies </a><br><br>
-<a href="#" class="govuk-!-font-size-16 govuk-link govuk-link--no-visited-state sub-shortcut" style="text-decoration: none; margin-bottom: 5px;">
-Application Enquiry </a><br><br>
-<a href="#" class="govuk-!-font-size-16 govuk-link govuk-link--no-visited-state sub-shortcut" style="text-decoration: none;">
-Service Messages </a>
+<br>
+<div style="cursor: default;">
+<h2 href="#" class="govuk-!-font-size-24 govuk-link govuk-link--no-visited-state sub-shortcut"  style=" margin-bottom: 5px; background: ">
+Request Official Copies </h2>
+<h2 href="#" class="govuk-!-font-size-24 govuk-link govuk-link--no-visited-state sub-shortcut" style="none; margin-bottom: 5px;">
+Application Enquiry </h2>
+<h2 href="#" class="govuk-!-font-size-24 govuk-link govuk-link--no-visited-state sub-shortcut" style="">
+Service Messages </h2>
+<br>
+<br>
+</div>
+
+<hr style="width: 210%;">
 </div>
 
 
 <div class="govuk-grid-column-one-quarter">
-  <button class="shortcut-downloads" href="#">
-  <label class="govuk-!-font-size-19" style="font-family: arial;"> PDF Downloads</label>
-  </button>
-<br>
+  <div class="pdf-shortcut">
+    <a href="sessionone.html">
+      <h2 class="govuk-!-font-size-24" style="padding: 10px;"> PDF<br> Downloads </h2>
+    </a>
+</div>
 <br>
 
-<a href="#" class=" govuk-!-font-size-16 govuk-link govuk-link--no-visited-state sub-shortcut" style="text-decoration: none; margin-bottom: 5px;">
-Register View </a><br><br>
-<a href="#" class=" govuk-!-font-size-16 govuk-link govuk-link--no-visited-state sub-shortcut" style="text-decoration: none; margin-bottom: 5px;">
-MapSearch </a><br><br>
-<a href="#" class=" govuk-!-font-size-16 govuk-link govuk-link--no-visited-state sub-shortcut" style="text-decoration: none; margin-bottom: 5px;">
-Fees </a>  <br>
+<div style="cursor: default;">
+<h2 href="#" class=" govuk-!-font-size-24 govuk-link" style="margin-bottom: 5px;">
+Register View </h2>
+<h2 href="#" class=" govuk-!-font-size-24 govuk-link govuk-link--no-visited-state sub-shortcut" style="margin-bottom: 5px;">
+MapSearch </h2>
+<h2 href="#" class=" govuk-!-font-size-24 govuk-link govuk-link--no-visited-state sub-shortcut" style="margin-bottom: 5px;">
+Fees </h2>  <br>
   <br>
+</div>
 </div>
 
 
@@ -252,7 +270,7 @@ Fees </a>  <br>
   <b> If these details are incorrect, please log out and contact us. </b>
   </p></div>
 
-<div style="background-color: rgba(108, 182, 68, 0.3); padding-top: 1px; padding-bottom: 15px; padding-left: 15px;">
+<div style="background-color: rgba(252,185,113,0.5); padding-top: 1px; padding-bottom: 15px; padding-left: 15px;">
 <h3 style="font-size: 19px; font-family: arial; font-weight:normal;">Despatch address</h3>
 <p href="#" style="font-size: 14px;"> Address:  <br> 1 New Road, <br> Newtown, <br> Newtownland, <br> N3WT0WN <br>
   <br>
@@ -261,7 +279,7 @@ Fees </a>  <br>
 </div>
 
 
-<div style="background-color: rgba(108, 182, 68, 0.3); padding-top: 1px; padding-bottom: 15px; padding-left: 15px; margin-top: 5px;">
+<div style="background-color: rgba(221,230,97,0.5); padding-top: 1px; padding-bottom: 15px; padding-left: 15px; margin-top: 5px;">
 <h3 style="font-size: 19px; font-family: arial; font-weight:normal;">Direct debit</h3>
 <p style="font-size: 14px;"> Default Variable Direct Debit: <br> Key #1234567. <br><br>
 
@@ -275,8 +293,8 @@ To change direct debit details, see <a href="#"> Administrative services </a>.
 </div>
 
 
-<div class="govuk-grid-column-one-half" style="margin-top: -450px; font-family: arial;">
-
+<div class="govuk-grid-column-one-half" style="margin-top: -400px; font-family: arial;">
+<div class="govuk-!-font-size-16">
 <h3>My Downloads </h3>
  No new items to be viewed  <br><br>
 
@@ -285,6 +303,7 @@ To change direct debit details, see <a href="#"> Administrative services </a>.
 
 <h3>Service Messages</h3>
  There are <a href="#">new service messages</a> since you last logged in.<br><br><br><br>
+</div>
 
 
     <div style="background-color: rgba(108, 182, 68, 0.3); padding: 15px;">

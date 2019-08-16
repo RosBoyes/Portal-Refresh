@@ -230,6 +230,8 @@ for (i = 0; i < coll.length; i++) {
         <br>
         <button class="filter">Filter by type</button>
         <div class="content">
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
     {{ govukCheckboxes({
       idPrefix: "application-type",
       name: "application-type",
@@ -272,14 +274,15 @@ for (i = 0; i < coll.length; i++) {
       ]
     }) }}
 </div>
+</div>
     </div>
 
 
     <div class="govuk-grid-column-one-quarter">
       <br>
       <br>
-      <button class="filter progressfilter">Filter by progress</button>
-      <div class="content">
+      <button class="filter">Filter by progress</button>
+      <div class="">
 
 
     {{ govukCheckboxes({
@@ -309,8 +312,8 @@ for (i = 0; i < coll.length; i++) {
           text: "Delayed"
         },
         {
-          value: "Complete",
-          text: "Complete"
+          value: "Completed",
+          text: "Completed"
         }
       ]
     }) }}
@@ -318,9 +321,9 @@ for (i = 0; i < coll.length; i++) {
     </div>
 
     <div class="govuk-grid-column-one-half">
-    <label class="govuk-label govuk-!-font-size-16" style="float: right; font-style: italic;"> Search by Customer reference or Title number </label><br><br>
+    <label class="govuk-label govuk-!-font-size-16" style="font-style: italic; margin-left: 40px; float: left;"> Search by Customer reference, <br> Title number or HMLR reference</label><br><br>
 
-    <input type="text" id="search-input" style="width: 280px; height: 35px; font-size: 16px; padding-left: 0px; float: left; margin-left: 40px; border-color: black; border-width: 1px; border-radius: 2px;">
+    <input type="text" id="search-input" style="width: 270px; height: 35px; font-size: 16px; padding-left: 10px; float: left; margin-left: 40px; border-color: black; border-width: 1px; border-radius: 2px;">
       <button  id="search-button" style="float: right; font-size: 19px;"> Search </button>
     </div>
 
@@ -364,7 +367,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP123456 <!-- THIS IS PAGE {{page}} --></td>
+  <td class="govuk-table__cell" scope="row">LP123456 <p class="govuk-visually-hidden"> L927GDU </p><!-- THIS IS PAGE {{page}} --></td>
   <td class="govuk-table__cell">Jones.20313</td>
   <td class="govuk-table__cell">Register Update</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-15">15/06/19</td>
@@ -383,7 +386,7 @@ for (i = 0; i < coll.length; i++) {
             <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">562.182.9891 </p></td>
+            <p style="font-size: 14px;">L927GDU</p></td>
 
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2">
@@ -405,9 +408,9 @@ for (i = 0; i < coll.length; i++) {
 
   <tbody class="govuk-table__body">
 
-  <tr class="govuk-table__row ">
+  <tr class="govuk-table__row">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> S827LKJ </p> </td>
   <td class="govuk-table__cell">Brown.12334</td>
   <td class="govuk-table__cell">New Lease</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
@@ -426,7 +429,7 @@ for (i = 0; i < coll.length; i++) {
             <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">98.986.HJ98B </p>
+            <p style="font-size: 14px;">S827LKJ</p>
             </td>
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2">
@@ -452,7 +455,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP09209</td>
+  <td class="govuk-table__cell" scope="row">LP09209 <p class="govuk-visually-hidden"> Y917GSY </p> </td>
   <td class="govuk-table__cell">Bartlett.23124</td>
   <td class="govuk-table__cell">Official Copies</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
@@ -472,7 +475,7 @@ for (i = 0; i < coll.length; i++) {
                 <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
                 <b> HMLR Reference</b><br><br>
 
-                <p style="font-size: 14px;">980.907.A8H </p></td>
+                <p style="font-size: 14px;">Y917GSY</p></td>
 
         <!-- Correspondence -->
               <td class="govuk-table__cell" colspan="2">
@@ -504,7 +507,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> E921HSK </p></td>
   <td class="govuk-table__cell">Watkins.12334</td>
   <td class="govuk-table__cell">Official Search of Whole with Priority</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-13">13/06/19</td>
@@ -529,7 +532,7 @@ for (i = 0; i < coll.length; i++) {
 
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">823.003.432B </p>
+            <p style="font-size: 14px;">E921HSK</p>
             </td>
 
     <!-- Correspondence -->
@@ -560,7 +563,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP451734</td>
+  <td class="govuk-table__cell" scope="row">LP451734 <p class="govuk-visually-hidden"> M928SAI </p></td>
   <td class="govuk-table__cell">Smith.20313</td>
   <td class="govuk-table__cell">Register Update</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
@@ -578,7 +581,7 @@ for (i = 0; i < coll.length; i++) {
             <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">872.143.1JA </p>
+            <p style="font-size: 14px;">M928SAI</p>
             </td>
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
@@ -606,7 +609,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP54312</td>
+  <td class="govuk-table__cell" scope="row">LP54312 <p class="govuk-visually-hidden"> A272JSH </p></td>
   <td class="govuk-table__cell">Curtis.15439</td>
   <td class="govuk-table__cell">Transfer of Part</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
@@ -625,7 +628,7 @@ for (i = 0; i < coll.length; i++) {
               <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
               <b> HMLR Reference</b>
               <br><br>
-              <p style="font-size: 14px;">982.988.129C </p>
+              <p style="font-size: 14px;">A272JSH</p>
               </td>
       <!-- Correspondence -->
             <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
@@ -652,7 +655,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> T832JDH </p></td>
   <td class="govuk-table__cell">Franklin.17234</td>
   <td class="govuk-table__cell">Official Search of Part with Priority</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-10">10/04/19</td>
@@ -677,7 +680,7 @@ for (i = 0; i < coll.length; i++) {
 
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">876.123.533W </p>
+            <p style="font-size: 14px;">T832JDH</p>
             </td>
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
@@ -706,7 +709,7 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP72912</td>
+  <td class="govuk-table__cell" scope="row">LP72912 <p class="govuk-visually-hidden"> P956EKA </p></td>
   <td class="govuk-table__cell">Terry.43123</td>
   <td class="govuk-table__cell">Search of the Index Map</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-11">11/05/19</td>
@@ -725,7 +728,7 @@ for (i = 0; i < coll.length; i++) {
             <td class="govuk-table__row" colspan="2" style="padding-top: 0px;">
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">897.452.678Ks </p>
+            <p style="font-size: 14px;">P956EKA</p>
 
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
@@ -750,11 +753,11 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP890543</td>
+  <td class="govuk-table__cell" scope="row">LP890543 <p class="govuk-visually-hidden"> K928TDH </p></td>
   <td class="govuk-table__cell">Johnson.12334</td>
   <td class="govuk-table__cell">Register Update</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-05">05/04/19</td>
-  <td class="govuk-table__cell"> <label class="govuk-tag--complete">Complete</label> </td>
+  <td class="govuk-table__cell"> <label class="govuk-tag--complete">Completed</label> </td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-06-08">08/06/19</td>
   <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger" href="#">View details</a></td>
   </tr>
@@ -769,7 +772,7 @@ for (i = 0; i < coll.length; i++) {
             <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">897.576.89M </p>
+            <p style="font-size: 14px;">K928TDH</p>
             </td>
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2">
@@ -794,11 +797,11 @@ for (i = 0; i < coll.length; i++) {
 
   <tr class="govuk-table__row ">
   <td class="govuk-table__cell" scope="row"> <img src="public/images/closedarrow.png" class="closedarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"><img src="public/images/openarrow.png" class="openarrow" style="height: 40px; width: 40px; margin-right: -15px; padding-top: 4px;"></td>
-  <td class="govuk-table__cell" scope="row">LP980123</td>
+  <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> A391OLS </p></td>
   <td class="govuk-table__cell">Colbrook.12334</td>
   <td class="govuk-table__cell">New Lease</td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-01">01/05/19</td>
-  <td  class="govuk-table__cell"> <label class="govuk-tag--complete">Complete</label> </td>
+  <td  class="govuk-table__cell"> <label class="govuk-tag--complete">Completed</label> </td>
   <td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-05-09">09/04/19</td>
   <td class="govuk-table__cell" scope="row" ><a class="expandy-row-trigger" href="#">View details</a></td>
   </tr>
@@ -813,7 +816,7 @@ for (i = 0; i < coll.length; i++) {
             <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
             <b> HMLR Reference</b>
             <br><br>
-            <p style="font-size: 14px;">982.876.456E </p>
+            <p style="font-size: 14px;">A391OLS </p>
             </td>
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2">

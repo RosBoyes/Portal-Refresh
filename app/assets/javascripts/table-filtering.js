@@ -51,7 +51,6 @@
   var applicationType = document.getElementById('application-type')
   var applicationProgress = document.getElementById('application-progress')
   var searchForm = document.getElementById('search')
-  var hideViewed = document.getElementById('hide-viewed')
   searchForm.addEventListener('submit', function(e) {
     e.preventDefault()
     updateSearch()
@@ -80,9 +79,9 @@
     resetTable()
 
     const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
-    if (applicationProgressChoices.length > 0) {
+    // if (applicationProgressChoices.length > 0) {
         filterTable(applicationProgressChoices, [5])
-    }
+    // }
 
     const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
     if (applicationTypeChoices.length > 0) {
@@ -155,22 +154,44 @@
       }
     }
   }
+
+  // select all //
+  $('#select-all').click(function(event) {
+      if(this.checked) {
+          // Iterate each checkbox
+          $('.checkbox-progress input[type="checkbox"]').each(function() {
+              this.checked = true;
+          });
+      } else {
+          $('.checkbox-progress input[type="checkbox"]').each(function() {
+              this.checked = false;
+          });
+        }
+
+      updateSearch();
+
+
+
+
+
+  });
 })()
 
 
-var coll = document.getElementsByClassName("filter");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
+// var coll = document.getElementsByClassName("filter");
+// var i;
+//
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "block";
+//     }
+//   });
+// }
 
 // table filter icons //
