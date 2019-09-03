@@ -175,6 +175,23 @@
 
   });
 
+  // select all session C//
+  $('#select-all').click(function(event) {
+      if(this.checked) {
+          // Iterate each checkbox
+          $('.checkbox-progress2 input[type="checkbox"]').each(function() {
+              this.checked = true;
+          });
+      } else {
+          $('.checkbox-progress2 input[type="checkbox"]').each(function() {
+              this.checked = false;
+          });
+        }
+
+      updateSearch();
+
+  });
+
 })()
 
 
