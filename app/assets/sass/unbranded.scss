@@ -82,7 +82,7 @@ $govuk-page-width: 1200px;
 }
 
 .my-work tbody tr:hover {
-  background-color: #ddd;
+
   cursor: pointer;
 }
 
@@ -204,6 +204,17 @@ a:visited {
   font-size: 14px;
 }
 
+.checkbox-progress2 .govuk-checkboxes__item {
+  clear: none;
+  width: 33%;
+}
+
+.expandy-row-trigger2 {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 28px;
+  padding-left: 20px;
+}
 
 
 

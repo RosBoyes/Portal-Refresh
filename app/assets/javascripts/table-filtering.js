@@ -56,6 +56,9 @@
     updateSearch()
   })
 
+
+
+
   // Change handler on the checkboxes
   applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress"]'));
   applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type"]'));
@@ -127,7 +130,7 @@
 
     searchBox.value = ''
     applicationTypeCheckboxes.concat(applicationProgressCheckboxes).forEach(function(checkbox) {
-      checkbox.checked = false
+      checkbox.checked = true
     })
     // hideViewed.checked = false
   })
@@ -170,11 +173,8 @@
 
       updateSearch();
 
-
-
-
-
   });
+
 })()
 
 
