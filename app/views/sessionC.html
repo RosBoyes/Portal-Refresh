@@ -217,14 +217,14 @@ for (i = 0; i < coll.length; i++) {
     <div class="govuk-grid-column-one-third">
     <label class="govuk-label govuk-!-font-size-16" style="float: left;"> Search by Customer reference, Title number or HMLR reference</label><br><br>
 
-    <input type="text" id="search-input" style="width: 250px; height: 35px; font-size: 14px; padding-left: 10px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
+    <input type="text" id="search-input" style="width: 250px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 10px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
       <button  id="search-button" style="float: left; font-size: 19px; margin-top: 10px;"> Search </button>
     </div>
 
 
 
-      <div class="govuk-grid-column-one-quarter" style="width: 30%;" >
-        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 15px;"> Filter by type</label>
+      <div class="govuk-grid-column-one-third" style="width: 30%;" >
+        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px;"> Filter by type</label>
 
         <div class="">
       {{ govukCheckboxes ({
@@ -257,7 +257,7 @@ for (i = 0; i < coll.length; i++) {
 
     <div class="govuk-grid-column-one-third" style="margin-top: 0px;">
 
-      <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 15px;"> Filter by progress</label>
+      <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px;"> Filter by progress</label>
       <div class="">
 
     {{ govukCheckboxes({
@@ -324,14 +324,14 @@ for (i = 0; i < coll.length; i++) {
 
 <thead class="govuk-table__head">
 <tr class="govuk-table__row" style="font-size:14px;background-color: rgba(199,210,193,0.5);">
-<th class="govuk-table__header govuk-!-width-one-sixth " scope="col"></th>
+<th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
 <th class="govuk-table__header govuk-!-width-one-sixth " scope="col" id="Title">Title number</th>
 <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Customer reference</th>
 <th class="govuk-table__header govuk-!-width-one-sixth " scope="col">Application type</th>
-<th class="govuk-table__header govuk-!-width-one-sixth sortable" scope="col">Received by HMLR</th>
+<th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Received by HMLR </th>
 <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Application progress</th>
-<th class="govuk-table__header govuk-!-width-one-sixth sortable" scope="col">Estimated completion</th>
-<th class="govuk-table__header govuk-!-width-one-twelfth " scope="col" style="width: 6%; font-weight:;">View details</th>
+<th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
+<th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a href="#"  style="font-weight: normal; font-size: 12px;" class="expandyAll">Open all</a></th>
 </tr>
 <tr class="govuk-table__row"><p style="font-size: 14px; float: left;"> Estimated completion dates are calculated using <a class="govuk-link" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a><br> Dates may change depending on current wait times and the status of an application. </p> </th>
   <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 14px; margin-top: 20px;">Reset search and filters</a>
@@ -352,12 +352,12 @@ for (i = 0; i < coll.length; i++) {
   <td class="govuk-table__cell " scope="row" data-sortable="2019-06-15">15/06/19</td>
   <td class="govuk-table__cell " scope="row">Delayed - Prior Pending Applications(s) or Official Search(es)</td>
   <td class="govuk-table__cell " style="padding-left: 10px;"  data-sortable="2019-11-21">21/11/19</td>
-  <td class="govuk-table__cell " scope="row"><a class="expandy-row-trigger2" style="text-decoration: none;" href="#">+</a></td>
+  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
   </tr>
 
 
 
-  <tr class="govuk-table__row expandy-row hide-row">
+  <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
     <!-- Vertical line -->
     <td class="govuk-table__cell" colspan="1"></div>
       </td>
@@ -434,15 +434,15 @@ for (i = 0; i < coll.length; i++) {
 
   <tbody class="govuk-table__body">
 
-  <tr class="govuk-table__row govuk-link">
-<td class="govuk-table__cell "></td>
+  <tr class="govuk-table__row  govuk-link">
+  <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP09209 <p class="govuk-visually-hidden"> Y917GSY </p> </td>
   <td class="govuk-table__cell">Bartlett.23124</td>
   <td class="govuk-table__cell">Official Copies <p class="govuk-visually-hidden"> Preliminary </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
   <td class="govuk-table__cell" scope="row">Completed</td>
   <td class="govuk-table__cell" style="padding-left: 10px;">  </td>
-    <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+    <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2 nogovuk-link" href="#">+</a></td>
   </tr>
 
 
@@ -830,6 +830,8 @@ for (i = 0; i < coll.length; i++) {
 
   </tbody>
 
+
+
 {% endmacro %}
 
 {{rows(1)}}
@@ -840,10 +842,10 @@ for (i = 0; i < coll.length; i++) {
 
 </table>
 
-<div id="estimated">
-
-<div id="pagination" style="float: right;"></div>
+<div class="govuk-grid-column-one-quarter" style="float: right; text-align: right;">
+<div><p> < 1 > </p></div>
 </div>
+
 
 </div>
 </div>

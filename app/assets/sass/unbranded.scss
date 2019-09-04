@@ -87,7 +87,7 @@ $govuk-page-width: 1200px;
 }
 
 .my-work thead th:hover {
-  cursor: pointer;
+  cursor: default;
 }
 
 .my-work tr.expandy-row:hover {
@@ -146,20 +146,29 @@ a:visited {
 
 .sortable {
   &:after {
-    content: '▼▲'
+    content: '▲▼';
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
 
   }
 }
 
 .sortable--asc {
   &:after {
-    content: '  ▲';
+    content: '▲(Asc)';
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: underline;
   }
 }
 
 .sortable--desc {
   &:after {
-    content: '  ▼';
+    content: '▼(Desc)';
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: underline;
   }
 }
 
@@ -216,8 +225,12 @@ a:visited {
   margin-left: 10px;
 }
 
-.govuk-link:hover {
+tr.govuk-link:hover td {
   text-decoration: underline;
+}
+
+tr.govuk-link:hover td:last-child {
+  text-decoration: none;
 }
 
 
