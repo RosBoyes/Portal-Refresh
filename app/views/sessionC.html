@@ -224,7 +224,7 @@ for (i = 0; i < coll.length; i++) {
 
 
       <div class="govuk-grid-column-one-third" style="width: 30%;" >
-        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px "> Filter by type</label>
+        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px "> Show only</label>
 
         <div class="">
       {{ govukCheckboxes ({
@@ -240,17 +240,18 @@ for (i = 0; i < coll.length; i++) {
       {
         value: "Preliminary",
         text: "Preliminary applications (Enquiries for information)",
-        checked: true,
+          checked: false,
         id: "Preliminary"
       },
 
       {
         value: "Substantive",
-        text: "Substantive applications (Creating or changing an entry on the register)",
-        checked: true,
+        text: "Substantive applications (Creating or changing an entry on the register)"   ,
+          checked: false,
         id: "Substantive"
-
       }
+
+
       ]
     }) }}
 
@@ -274,35 +275,29 @@ for (i = 0; i < coll.length; i++) {
       },
       items: [
         {
-          value: "Select all",
-          text: "Select all",
-          id: "select-all",
-          checked: true
-        },
-        {
           value: "Received",
           text: "Received",
-          checked: true
+          checked: false
         },
         {
           value: "In progress",
           text: "In progress",
-          checked: true
+            checked: false
         },
         {
           value: "Cancelled",
           text: "Cancelled",
-          checked: true
+            checked: false
         },
         {
           value: "Delayed",
           text: "Delayed",
-          checked: true
+            checked: false
         },
         {
           value: "Completed",
           text: "Completed",
-          checked: true
+            checked: false
         }
       ]
     }) }}
@@ -334,7 +329,7 @@ for (i = 0; i < coll.length; i++) {
 <th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Received by HMLR </th>
 <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Application progress</th>
 <th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
-<th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a href="#"  style="font-weight: normal; font-size: 12px;" class="expandyAll">Open all</a></th>
+<th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a href="#"  style="font-weight: normal; font-size: 12px;" class="expandyAll">View details</a></th>
 </tr>
 <tr class="govuk-table__row"><p style="font-size: 14px; float: left;"> Estimated completion dates are calculated using <a class="govuk-link" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a><br> Dates may change depending on current wait times and the status of an application. </p> </th>
   <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 14px; margin-top: 20px;">Reset search and filters</a>
@@ -398,7 +393,7 @@ for (i = 0; i < coll.length; i++) {
   <td class="govuk-table__cell">Brown.12334</td>
   <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
-  <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> Received: Priority Protected - Awaiting Processing</t></td>
+  <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress</t></td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
   <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
   </tr>
@@ -443,7 +438,7 @@ for (i = 0; i < coll.length; i++) {
   <td class="govuk-table__cell">Bartlett.23124</td>
   <td class="govuk-table__cell">Official Copies <p class="govuk-visually-hidden"> Preliminary </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
-  <td class="govuk-table__cell" scope="row">Completed</td>
+  <td class="govuk-table__cell" scope="row"><p class="govuk-visually-hidden">Completed</td>
   <td class="govuk-table__cell" style="padding-left: 10px;">  </td>
     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2 nogovuk-link" href="#">+</a></td>
   </tr>
