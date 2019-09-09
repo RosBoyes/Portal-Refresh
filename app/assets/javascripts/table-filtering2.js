@@ -1,4 +1,4 @@
-(function () {
+govuk-visually-hidden(function () {
   var table = document.querySelector('.my-work')
   var rows = table.querySelectorAll('tbody');
   var page = 0;
@@ -38,18 +38,18 @@
     })
   }
 
-  // function hideViewedRows() {
-  //   [].forEach.call(rows, function(row, index) {
-  //     if (row.classList.contains('viewed')) {
-  //       row.classList.add('govuk-visually-hidden')
-  //     }
-  //   })
-  // }
+  function hideViewedRows() {
+    [].forEach.call(rows, function(row, index) {
+      if (row.classList.contains('viewed')) {
+        row.classList.add('govuk-visually-hidden')
+      }
+    })
+  }
 
   // Bind filtering functionality to search box
   var searchBox = document.getElementById('search-input')
-  var applicationType = document.getElementById('application-type')
-  var applicationProgress = document.getElementById('application-progress')
+  var applicationType = document.getElementById('application-type2')
+  var applicationProgress = document.getElementById('application-progress2')
   var searchForm = document.getElementById('search')
   searchForm.addEventListener('submit', function(e) {
     e.preventDefault()
@@ -60,8 +60,8 @@
 
 
   // Change handler on the checkboxes
-  applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress"]'));
-  applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type"]'));
+  applicationProgressCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-progress2"]'));
+  applicationTypeCheckboxes = Array.prototype.slice.call(document.querySelectorAll('[name="application-type2"]'));
   applicationProgressCheckboxes.concat(applicationTypeCheckboxes).forEach(function(checkbox, index) {
     checkbox.addEventListener('change', function(e) {
       updateSearch()
@@ -92,7 +92,6 @@
     } else {
         filterTable(applicationTypeChoices, [0])
     }
-
 
     if(searchBox.value.length > 0) {
       filterTable(searchBox.value, [1, 2])

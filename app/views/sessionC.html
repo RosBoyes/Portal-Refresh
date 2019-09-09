@@ -224,12 +224,12 @@ for (i = 0; i < coll.length; i++) {
 
 
       <div class="govuk-grid-column-one-third" style="width: 30%;" >
-        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px;"> Filter by type</label>
+        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px "> Filter by type</label>
 
         <div class="">
       {{ govukCheckboxes ({
-      idPrefix: "application-type",
-      name: "application-type",
+      idPrefix: "application-type2",
+      name: "application-type2",
       classes: "govuk-checkboxes--small",
       fieldset: {
         legend: {
@@ -240,29 +240,32 @@ for (i = 0; i < coll.length; i++) {
       {
         value: "Preliminary",
         text: "Preliminary applications (Enquiries for information)",
-        checked: true
+        checked: true,
+        id: "Preliminary"
       },
 
       {
         value: "Substantive",
         text: "Substantive applications (Creating or changing an entry on the register)",
-        checked: true
+        checked: true,
+        id: "Substantive"
 
       }
       ]
     }) }}
+
 </div>
     </div>
 
 
-    <div class="govuk-grid-column-one-third" style="margin-top: 0px;">
+    <div class="govuk-grid-column-one-third" style="margin-top: 50px;">
 
-      <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px;"> Filter by progress</label>
+
       <div class="">
 
     {{ govukCheckboxes({
-      idPrefix: "application-progress",
-      name: "application-progress",
+      idPrefix: "application-progress2",
+      name: "application-progress2",
       classes: "govuk-checkboxes--small checkbox-progress2 govuk-table__row",
       fieldset: {
         legend: {
@@ -348,7 +351,7 @@ for (i = 0; i < coll.length; i++) {
   <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell " scope="row">LP123456 <p class="govuk-visually-hidden"> L927GDU </p><!-- THIS IS PAGE {{page}} --></td>
   <td class="govuk-table__cell ">Jones.20313</td>
-  <td class="govuk-table__cell ">Register Update<p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell Substantive" id="">Register Update<p class="govuk-visually-hidden"> Substantive </p></td>
   <td class="govuk-table__cell " scope="row" data-sortable="2019-06-15">15/06/19</td>
   <td class="govuk-table__cell " scope="row">Delayed - Prior Pending Applications(s) or Official Search(es)</td>
   <td class="govuk-table__cell " style="padding-left: 10px;"  data-sortable="2019-11-21">21/11/19</td>
@@ -393,7 +396,7 @@ for (i = 0; i < coll.length; i++) {
     <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> S827LKJ </p> </td>
   <td class="govuk-table__cell">Brown.12334</td>
-  <td class="govuk-table__cell">New Lease <p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
   <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> Received: Priority Protected - Awaiting Processing</t></td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
