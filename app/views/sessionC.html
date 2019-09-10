@@ -214,7 +214,7 @@ for (i = 0; i < coll.length; i++) {
 <div class="govuk-grid-row" style="margin-bottom: 20px;">
 
   <form id="search" style="">
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-one-half">
     <label class="govuk-label govuk-!-font-size-16" style="float: left;"> Search by Customer reference, Title number or HMLR reference</label><br><br>
 
     <input type="text" id="search-input" style="width: 250px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 10px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
@@ -223,14 +223,14 @@ for (i = 0; i < coll.length; i++) {
 
 
 
-      <div class="govuk-grid-column-one-third" style="width: 30%;" >
+      <div class="govuk-grid-column-one-half">
         <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px "> Show only</label>
 
         <div class="">
       {{ govukCheckboxes ({
       idPrefix: "application-type2",
       name: "application-type2",
-      classes: "govuk-checkboxes--small",
+      classes: "govuk-checkboxes--small checkbox2",
       fieldset: {
         legend: {
           text: ""
@@ -240,7 +240,7 @@ for (i = 0; i < coll.length; i++) {
       {
         value: "Preliminary",
         text: "Preliminary applications (Enquiries for information)",
-          checked: false,
+        checked: false,
         id: "Preliminary"
       },
 
@@ -250,59 +250,59 @@ for (i = 0; i < coll.length; i++) {
           checked: false,
         id: "Substantive"
       }
-
-
       ]
     }) }}
 
 </div>
+
+<div class="">
+{{ govukCheckboxes ({
+idPrefix: "application-progress2",
+name: "application-progress2",
+classes: "govuk-checkboxes--small checkbox2",
+fieldset: {
+legend: {
+  text: ""
+}
+},
+items: [
+
+{
+value: "Received",
+text: "Received"   ,
+  checked: false,
+id: "Received"
+},
+{
+value: "In progress",
+text: "In progress"   ,
+  checked: false,
+id: "In progress"
+},
+{
+value: "Cancelled",
+text: "Cancelled"   ,
+  checked: false,
+id: "Cancelled"
+},
+{
+value: "Delayed",
+text: "Delayed"   ,
+  checked: false,
+id: "Delayed"
+},
+{
+value: "Completed",
+text: "Completed"   ,
+  checked: false,
+id: "Completed"
+}
+]
+}) }}
+
+</div>
     </div>
 
-
-    <div class="govuk-grid-column-one-third" style="margin-top: 50px;">
-
-
-      <div class="">
-
-    {{ govukCheckboxes({
-      idPrefix: "application-progress2",
-      name: "application-progress2",
-      classes: "govuk-checkboxes--small checkbox-progress2 govuk-table__row",
-      fieldset: {
-        legend: {
-          text: ""
-        }
-      },
-      items: [
-        {
-          value: "Received",
-          text: "Received",
-          checked: false
-        },
-        {
-          value: "In progress",
-          text: "In progress",
-            checked: false
-        },
-        {
-          value: "Cancelled",
-          text: "Cancelled",
-            checked: false
-        },
-        {
-          value: "Delayed",
-          text: "Delayed",
-            checked: false
-        },
-        {
-          value: "Completed",
-          text: "Completed",
-            checked: false
-        }
-      ]
-    }) }}
-    </div>
-    </div>
 
 <br>
   </form>
@@ -346,7 +346,7 @@ for (i = 0; i < coll.length; i++) {
   <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell " scope="row">LP123456 <p class="govuk-visually-hidden"> L927GDU </p><!-- THIS IS PAGE {{page}} --></td>
   <td class="govuk-table__cell ">Jones.20313</td>
-  <td class="govuk-table__cell Substantive" id="">Register Update<p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell Substantive" id="">Register Update<p class="govuk-visually-hidden"> Substantive Delayed </p></td>
   <td class="govuk-table__cell " scope="row" data-sortable="2019-06-15">15/06/19</td>
   <td class="govuk-table__cell " scope="row">Delayed - Prior Pending Applications(s) or Official Search(es)</td>
   <td class="govuk-table__cell " style="padding-left: 10px;"  data-sortable="2019-11-21">21/11/19</td>
@@ -391,7 +391,7 @@ for (i = 0; i < coll.length; i++) {
     <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> S827LKJ </p> </td>
   <td class="govuk-table__cell">Brown.12334</td>
-  <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive In progress </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
   <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress</t></td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
@@ -436,9 +436,9 @@ for (i = 0; i < coll.length; i++) {
   <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP09209 <p class="govuk-visually-hidden"> Y917GSY </p> </td>
   <td class="govuk-table__cell">Bartlett.23124</td>
-  <td class="govuk-table__cell">Official Copies <p class="govuk-visually-hidden"> Preliminary </p></td>
+  <td class="govuk-table__cell">Official Copies <p class="govuk-visually-hidden"> Preliminary</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
-  <td class="govuk-table__cell" scope="row"><p class="govuk-visually-hidden">Completed</td>
+  <td class="govuk-table__cell" scope="row"><p class="govuk-visually-hidden"></td>
   <td class="govuk-table__cell" style="padding-left: 10px;">  </td>
     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2 nogovuk-link" href="#">+</a></td>
   </tr>
@@ -488,7 +488,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> E921HSK </p></td>
   <td class="govuk-table__cell">Watkins.12334</td>
-  <td class="govuk-table__cell">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Preliminary </p></td>
+  <td class="govuk-table__cell">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Preliminary Completed </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-13">13/06/19</td>
   <td  class="govuk-table__cell" scope="row"><text class="govuk-tag--complete">Completed</text></td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable=""></td>
@@ -544,7 +544,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP451734 <p class="govuk-visually-hidden"> M928SAI </p></td>
   <td class="govuk-table__cell">Smith.20313</td>
-  <td class="govuk-table__cell">Register Update<p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell">Register Update<p class="govuk-visually-hidden"> Substantive Delayed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
   <td class="govuk-table__cell"scope="row">Delayed - Extension of Time Granted </td>
   <td class="govuk-table__cell" style="padding-left: 10px;"  data-sortable="2019-10-20">20/10/19</td>
@@ -590,7 +590,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP54312 <p class="govuk-visually-hidden"> A272JSH </p></td>
   <td class="govuk-table__cell">Curtis.15439</td>
-  <td class="govuk-table__cell">Transfer of Part<p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell">Transfer of Part<p class="govuk-visually-hidden"> Substantive Received</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
   <td class="govuk-table__cell"> <t class="govuk-tag--progress"> Received: Priority Protected - Set-up activity underway </t> </td>
   <td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-08-15"> 15/08/19</td>
@@ -636,7 +636,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> T832JDH </p></td>
   <td class="govuk-table__cell">Franklin.17234</td>
-  <td class="govuk-table__cell">Official Search of Part with Priority<p class="govuk-visually-hidden"> Preliminary </p></td>
+  <td class="govuk-table__cell">Official Search of Part with Priority<p class="govuk-visually-hidden"> Preliminary Cancelled</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-10">10/05/19</td>
   <td class="govuk-table__cell">Cancelled</td>
   <td class="govuk-table__cell"style="padding-left: 10px;"></td>
@@ -690,7 +690,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP72912 <p class="govuk-visually-hidden"> P956EKA </p></td>
   <td class="govuk-table__cell">Terry.43123</td>
-  <td class="govuk-table__cell">Search of the Index Map<p class="govuk-visually-hidden"> Preliminary </p></td>
+  <td class="govuk-table__cell">Search of the Index Map<p class="govuk-visually-hidden"> Preliminary Completed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-11">11/05/19</td>
   <td  class="govuk-table__cell">Completed</td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable=""></td>
@@ -734,7 +734,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP890543 <p class="govuk-visually-hidden"> K928TDH </p></td>
   <td class="govuk-table__cell">Johnson.12334</td>
-  <td class="govuk-table__cell">Register Update<p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell">Register Update<p class="govuk-visually-hidden"> Substantive Completed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-04-05">05/04/19</td>
   <td class="govuk-table__cell"> <label class="govuk-tag--complete">Completed</label> </td>
   <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-06-08">08/06/19</td>
@@ -779,7 +779,7 @@ for (i = 0; i < coll.length; i++) {
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> A391OLS </p></td>
   <td class="govuk-table__cell">Colbrook.12334</td>
-  <td class="govuk-table__cell">New Lease<p class="govuk-visually-hidden"> Substantive </p></td>
+  <td class="govuk-table__cell">New Lease<p class="govuk-visually-hidden"> Substantive Completed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-01">01/05/19</td>
   <td  class="govuk-table__cell"> <label class="govuk-tag--complete">Completed</label> </td>
   <td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-05-09">09/04/19</td>

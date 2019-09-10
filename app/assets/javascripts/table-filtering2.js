@@ -51,6 +51,7 @@
   var applicationType = document.getElementById('application-type2')
   var applicationProgress = document.getElementById('application-progress2')
   var searchForm = document.getElementById('search')
+  var searchButton = document.getElementById('search-button')
   searchForm.addEventListener('submit', function(e) {
     e.preventDefault()
     updateSearch()
@@ -78,33 +79,22 @@
     }, [])
   }
 
-
   function updateSearch() {
     resetTable()
 
-    // const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
-    // if (applicationProgressChoices.length > 0)
-    //     filterTable(applicationProgressChoices, [5])
-    //     if (applicationTypeChoices.length === 0) {
-    //       updateFilter()
-    //         }
-    // }
-
-    const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
-    if (applicationTypeChoices.length >= 0) {
-        filterTable(applicationTypeChoices, [3])
-        }
-    if (applicationTypeChoices.length === 0) {
-        updateSearch()
-        }
-
-
-
-
-
-    if(searchBox.value.length = 0) {
+    if(searchBox.value.length >= 1) {
       filterTable(searchBox.value, [1, 2])
     }
+
+    const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
+    if (applicationTypeChoices.length >=1) {
+        filterTable(applicationTypeChoices, [3])}
+
+
+    const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
+    if (applicationProgressChoices.length >=1) {
+        filterTable(applicationProgressChoices, [3])}
+
 
 
 // //     // paginate
@@ -142,7 +132,7 @@
 
     searchBox.value = ''
     applicationTypeCheckboxes.concat(applicationProgressCheckboxes).forEach(function(checkbox) {
-      checkbox.checked = true
+      checkbox.checked = false
     })
     // hideViewed.checked = false
   })
@@ -188,9 +178,6 @@
       updateSearch();
 
   });
-
-
-
 
 })()
 
