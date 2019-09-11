@@ -1,63 +1,58 @@
 <!DOCTYPE html>
 {% extends "layout_unbranded.html" %}
-{% from "checkboxes/macro.njk" import govukCheckboxes %}
-
-
-{% block pageTitle %}
+  {% from "checkboxes/macro.njk" import govukCheckboxes %}
+  {% block pageTitle %}
 {% endblock %}
 
 {% block content %}
 
 <!-- Back & clear data top -->
 <div class="govuk-width-container">
-   <a href="index.html" class="govuk-back-link">Back to Index</a>
-   <meta charset="utf-8"/>
+    <a href="index.html" class="govuk-back-link">Back to Index</a>
+    <meta charset="utf-8"/>
 
 
 <!-- Phase banner ----->
-   <div class="govuk-phase-banner">
-   <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag">
-   Prototype
- </strong>
-     <span class="govuk-phase-banner__text">
-       This is a prototype and not a real service.
-     </span>
-   </p>
- </div>
- </div>
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">Prototype</strong>
+      <span class="govuk-phase-banner__text">
+        This is a prototype and not a real service.
+      </span></p>
+    </div>
+
+</div>
+
  <br>
  <br>
 
 <!-- Header -->
-  <div class="govuk-grid-row" >
-  <div class="govuk-grid-column-full" id="headerdiv">
-  <img src="public/images/headerlogo.svg" alt="hmlrlogo">
-  <br>
-  <a href="#" style="float: right; font-size: 14px; font-weight: ; margin-top: -15px;"> Logout </a>
+  <div class="govuk-grid-row">
 
-  <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px;"> Customer Support </a>
+    <div class="govuk-grid-column-full" id="headerdiv">
+    <img src="public/images/headerlogo.svg" alt="hmlrlogo">
+    <br>
+    <a href="#" style="float: right; font-size: 14px; font-weight: ; margin-top: -15px;"> Logout </a>
+    <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px;"> Customer Support </a>
+    <hr style= "height: 4px;  background-image: linear-gradient(-60deg,#b4d307,#b4d307 50%,#d7e900 0,#d7e900); border: none;">
+    </div>
 
-  <a href="#" style="float: right; font-size: 14px; font-weight: ; padding-right: 10px; margin-top: -15px; padding-bottom: 0px;"> Jane Doe </a>
-
-
-  <hr style= "height: 4px;  background-image: linear-gradient(-60deg,#b4d307,#b4d307 50%,#d7e900 0,#d7e900); border: none;">
   </div>
-  </div>
+
   <br>
   <br>
 
 
 <!-- Menu -->
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-quarter" id="menu">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter" id="menu">
 
     <!--Portal Home Menu item-->
     <div><button class="collapsible"><strong><a class="URL" href="index.html" style="text-decoration: none;">My Portal Homepage</a></strong></button></div>
 
-
     <!--INFORMATION SERVICES DROPDOWN-->
     <button class="collapsible"><strong>Information Services</strong></button>
-    <div class="content">
+    <!-- <div class="content">
     <div class="item"><a class="link" href="RequestOfficialCopies">Request official copies</a><br> </div>
     <div class="item"><a class="link">Official Search of Whole with Priority</a></div>
     <div class="item"><a class="link">Official Search of Part with Priority</a></div>
@@ -75,15 +70,15 @@
     <div class="item"><a class="link">Title Plan View</a></div>
     <div class="item"><a class="link">Document View</a></div>
     <div class="item"><a class="link">Request Historical Copies</a></div>
-    </div>
+    </div> -->
 
     <!--LAND CHARGES DROPDOWN-->
     <button class="collapsible"><strong>Land Charges Services</strong></button>
     <div class="content">
-    <div class="item"><a class="link">Bankruptcy Search</a><br> </div>
+    <!-- <div class="item"><a class="link">Bankruptcy Search</a><br> </div>
     <div class="item"><a class="link">Full Search</a></div>
     <div class="item"><a class="link">Office Copy</a></div>
-    <div class="item"><a class="link">Registration View</a></div>
+    <div class="item"><a class="link">Registration View</a></div> -->
     </div>
 
     <!--DOCUMENT REGISTRATION SERVICE-->
@@ -96,25 +91,23 @@
 
     <!--GENERAL FACILITIES-->
     <div><button class="collapsible"><strong>General Facilities</strong></button>
-    <div class="content">
+    <!-- <div class="content">
     <div class="item"><a class="link">Message area</a><br> </div>
     <div class="item"><a class="link">Services Requested</a></div>
     <div class="item"><a class="link">PDF Downloads</a></div>
-    <div class="item"><a class="link">Notifications</a></div>
-    </div>
+    <div class="item"><a class="link">Notifications</a></div> -->
+    <!-- </div> -->
 
     <!--Admin Services-->
     <button class="collapsible"><strong>Administrative Services</strong></button>
     <div class="content">
-    <div class="item"><a class="link">Alternative despatch address</a><br> </div>
+    <!-- <div class="item"><a class="link">Alternative despatch address</a><br> </div>
     <div class="item"><a class="link">Personal details</a></div>
-    <div class="item"><a class="link">Change password</a></div>
+    <div class="item"><a class="link">Change password</a></div> -->
     </div><br>
 
     <!--Additional menu-->
-
-
-</div>
+  </div>
 
 <style>
 
@@ -173,233 +166,241 @@
 
 </style>
 
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+<!--Menu dropdowns-->
+    <!-- <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
     }
-  });
-}
-</script>
+    </script> -->
 
 </div>
-
-
-
 
 
 <!-- Service title -->
 
 <div class="govuk-grid-column-three-quarters">
-<h1 class="govuk-body govuk-!-font-size-27" style="font-family: arial; padding-top: 5px;"> View My Applications </h1>
+    <h1 class="govuk-body govuk-!-font-size-27" style="font-family: arial; padding-top: 5px;"> View My Applications </h1>
 
 
-<!---CONTENT----------------------------------------------------------------->
+<!---CONTENT----->
 
 <!-- <h2 class="govuk-body govuk-!-font-size-21" style="font-family: arial; padding-top: 5px; font-style: italic;"></h2> -->
 
 <!--Filters & searches-->
 
-
 <div>
 
-<div class="govuk-grid-row" style="margin-bottom: 20px;">
+    <div class="govuk-grid-row" style="margin-bottom: 20px;">
 
-  <form id="search" style="">
-    <div class="govuk-grid-column-one-half">
-    <label class="govuk-label govuk-!-font-size-16" style="float: left;"> Search by Customer reference, Title number or HMLR reference</label><br><br>
+      <form id="search" style="">
+        <div class="govuk-grid-column-one-third">
 
-    <input type="text" id="search-input" style="width: 250px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 10px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
-      <button  id="search-button" style="float: left; font-size: 19px; margin-top: 10px;"> Search </button>
+        <label class="govuk-label govuk-!-font-size-16" style="float: left;"> Search by Customer reference, Title number or HMLR reference</label>
+        <br><br>
+
+        <input type="text" id="search-input" style="width: 300px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 10px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
+        <button  id="search-button" style="float: left; font-size: 19px; margin-top: 10px;"> Search </button>
+
+        </div>
+
+
+
+    <div class="govuk-grid-column-two-thirds">
+        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px; margin-left: 100px;"> Show only</label>
+
+              <div class="" style="margin-left: 100px;">
+
+                  {{ govukCheckboxes ({
+                  idPrefix: "application-type2",
+                  name: "application-type2",
+                  classes: "govuk-checkboxes--small checkbox2",
+                  fieldset: {
+                    legend: {
+                      text: ""
+                    }
+                  },
+                  items: [
+                  {
+                    value: "Preliminary",
+                    text: "Preliminary applications (Enquiries for information)",
+                    checked: false,
+                    id: "Preliminary"
+                  },
+
+                  {
+                    value: "Substantive",
+                    text: "Substantive applications (Creating or changing an  entry on the register)"   ,
+                      checked: false,
+                    id: "Substantive"
+                  }
+                  ]
+                }) }}
+
+            </div>
+
+
+            <div style="margin-left: 100px;">
+
+
+                <div class="">
+
+                {{ govukCheckboxes ({
+                idPrefix: "application-progress2",
+                name: "application-progress2",
+                classes: "govuk-checkboxes--small checkbox3",
+                fieldset: {
+                legend: {
+                  text: ""
+                }
+                },
+                items: [
+
+                {
+                value: "Received",
+                text: "Received"   ,
+                checked: false,
+                id: "Received"
+                },
+                {
+                value: "In progress",
+                text: "In progress"   ,
+                  checked: false,
+                id: "In progress"
+                },
+                {
+                value: "Cancelled",
+                text: "Cancelled"   ,
+                  checked: false,
+                id: "Cancelled"
+                },
+                {
+                value: "Delayed",
+                text: "Delayed"   ,
+                  checked: false,
+                id: "Delayed"
+                },
+                {
+                value: "Completed",
+                text: "Completed"   ,
+                  checked: false,
+                id: "Completed"
+                }
+                ]
+                }) }}
+                </div>
+
+          </div>
+
     </div>
-
-
-
-      <div class="govuk-grid-column-one-half">
-        <label class="govuk-label govuk-!-font-size-16" style="padding-bottom: 25px "> Show only</label>
-
-        <div class="">
-      {{ govukCheckboxes ({
-      idPrefix: "application-type2",
-      name: "application-type2",
-      classes: "govuk-checkboxes--small checkbox2",
-      fieldset: {
-        legend: {
-          text: ""
-        }
-      },
-      items: [
-      {
-        value: "Preliminary",
-        text: "Preliminary applications (Enquiries for information)",
-        checked: false,
-        id: "Preliminary"
-      },
-
-      {
-        value: "Substantive",
-        text: "Substantive applications (Creating or changing an entry on the register)"   ,
-          checked: false,
-        id: "Substantive"
-      }
-      ]
-    }) }}
-
-</div>
-
-<div class="">
-{{ govukCheckboxes ({
-idPrefix: "application-progress2",
-name: "application-progress2",
-classes: "govuk-checkboxes--small checkbox2",
-fieldset: {
-legend: {
-  text: ""
-}
-},
-items: [
-
-{
-value: "Received",
-text: "Received"   ,
-  checked: false,
-id: "Received"
-},
-{
-value: "In progress",
-text: "In progress"   ,
-  checked: false,
-id: "In progress"
-},
-{
-value: "Cancelled",
-text: "Cancelled"   ,
-  checked: false,
-id: "Cancelled"
-},
-{
-value: "Delayed",
-text: "Delayed"   ,
-  checked: false,
-id: "Delayed"
-},
-{
-value: "Completed",
-text: "Completed"   ,
-  checked: false,
-id: "Completed"
-}
-]
-}) }}
-
-</div>
-    </div>
-
+  <br>
+  </form>
 
 <br>
-  </form>
-  <br>
-  <br>
+<br>
 
 
-</div>
-
+    </div>
 </div>
 
 
-<div >
+  <div>
 
 <!-- My Work Table -->
-<table class="govuk-table my-work">
+    <table class="govuk-table my-work">
 
-<thead class="govuk-table__head">
-<tr class="govuk-table__row" style="font-size:14px;background-color: rgba(199,210,193,0.5);">
-<th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
-<th class="govuk-table__header govuk-!-width-one-sixth " scope="col" id="Title">Title number</th>
-<th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Customer reference</th>
-<th class="govuk-table__header govuk-!-width-one-sixth " scope="col">Application type</th>
-<th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Received by HMLR </th>
-<th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Application progress</th>
-<th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
-<th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a href="#"  style="font-weight: normal; font-size: 12px;" class="expandyAll">View details</a></th>
-</tr>
-<tr class="govuk-table__row"><p style="font-size: 14px; float: left;"> Estimated completion dates are calculated using <a class="govuk-link" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a><br> Dates may change depending on current wait times and the status of an application. </p> </th>
-  <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 14px; margin-top: 20px;">Reset search and filters</a>
-</tr>
-</thead>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row" style="font-size:14px;background-color: rgba(199,210,193,0.5);">
+          <th class="govuk-table__header govuk-!-width-one-twelfth " scope="col"></th>
+          <th class="govuk-table__header govuk-!-width-one-sixth " scope="col" id="Title">Title number</th>
+          <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Customer reference</th>
+          <th class="govuk-table__header govuk-!-width-one-sixth " scope="col">Application type</th>
+          <th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Received by HMLR </th>
+          <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Application progress</th>
+          <th class="govuk-table__header govuk-!-width-one-fifth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
+          <th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a href="#"  style="font-weight: bold; font-size: 14px;" class="expandyAll">View details</a></th>
+          </tr>
+          <tr class="govuk-table__row"><p style="font-size: 14px; float: left;">
+              Estimated completion dates are calculated using <a class="govuk-link" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a>
+              <br> Dates may change depending on current wait times and the status of an application. </p> </th>
 
+              <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 14px; margin-top: 20px;">Reset search and filters</a>
+          </tr>
+        </thead>
 
-
-<p id="nofiltermessage"></p>
 
 {% macro rows(page) %}
-  <!-- 1 --> <tbody class="govuk-table__body">
-  <tr class="govuk-table__row govuk-link">
-  <td class="govuk-table__cell "></td>
-  <td class="govuk-table__cell " scope="row">LP123456 <p class="govuk-visually-hidden"> L927GDU </p><!-- THIS IS PAGE {{page}} --></td>
-  <td class="govuk-table__cell ">Jones.20313</td>
-  <td class="govuk-table__cell Substantive" id="">Register Update<p class="govuk-visually-hidden"> Substantive Delayed </p></td>
-  <td class="govuk-table__cell " scope="row" data-sortable="2019-06-15">15/06/19</td>
-  <td class="govuk-table__cell " scope="row">Delayed - Prior Pending Applications(s) or Official Search(es)</td>
-  <td class="govuk-table__cell " style="padding-left: 10px;"  data-sortable="2019-11-21">21/11/19</td>
-  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
-  </tr>
+          <!-- 1 -->
+      <tbody class="govuk-table__body">
+          <tr class="govuk-table__row govuk-link">
+            <td class="govuk-table__cell "></td>
+            <td class="govuk-table__cell " scope="row">LP123456 <p class="govuk-visually-hidden"> L927GDU </p><!-- THIS IS PAGE {{page}} --></td>
+            <td class="govuk-table__cell ">Jones.20313</td>
+            <td class="govuk-table__cell Substantive" id="">Register Update<p class="govuk-visually-hidden"> Substantive Delayed </p></td>
+            <td class="govuk-table__cell " scope="row" data-sortable="2019-06-15">15/06/19</td>
+            <td class="govuk-table__cell " scope="row">Delayed - Prior Pending Applications(s) or Official Search(es)</td>
+            <td class="govuk-table__cell " style="padding-left: 10px;"  data-sortable="2019-11-21">21/11/19</td>
+            <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+          </tr>
+
+      <!-- 1 Expanded row -->
+            <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
+      <!-- Vertical line -->
+            <td class="govuk-table__cell" colspan="1"></div></td>
+
+      <!-- HMLR reference -->
+            <div>
+              <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <b> HMLR Reference</b>
+              <br>
+              <br>
+              <p style="font-size: 14px;">L927GDU</p>
+              </td>
+
+      <!-- Correspondence -->
+              <td class="govuk-table__cell" colspan="2">
+              <b>Correspondence</b>
+              <p style="font-size: 14px;"><br>
+              <a href="#"> Notice(s) issued on 22/08/19</a><br>
+              <a href="#"> Notice(s) issued on 12/07/19</a></p>
+              </td>
+
+      <!-- Files -->
+              <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <b>Files</b>
+              <br><br><br>
+              <p style="font-size: 14px;"></p>
+              </td>
+
+            </div>
+            </tr>
+    </tbody>
+
+          <!-- 2 -->
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row govuk-link">
+              <td class="govuk-table__cell "></td>
+              <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> S827LKJ </p> </td>
+              <td class="govuk-table__cell">Brown.12334</td>
+              <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive In progress </p></td>
+              <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
+              <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress</t></td>
+              <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
+              <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
+            </tr>
 
 
-
-  <tr class="govuk-table__row expandy-row hide-row accordion-default-content-1">
-    <!-- Vertical line -->
-    <td class="govuk-table__cell" colspan="1"></div>
-      </td>
-    <div>
-    <!-- HMLR reference -->
-
-            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
-            <b> HMLR Reference</b>
-            <br><br>
-            <p style="font-size: 14px;">L927GDU</p></td>
-
-    <!-- Correspondence -->
-          <td class="govuk-table__cell" colspan="2">
-            <b>Correspondence</b>
-            <p style="font-size: 14px;"><br>
-            <a href="#"> Notice(s) issued on 22/08/19</a><br>
-            <a href="#"> Notice(s) issued on 12/07/19</a>
-          </p></td>
-    <!-- Files -->
-            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
-            <b>Files</b><br><br><br>
-            <p style="font-size: 14px;">
-
-            </p></td>
-
-      </div>
-      </tr>
-  </tbody>
-
-  <tbody class="govuk-table__body">
-
-  <tr class="govuk-table__row govuk-link">
-    <td class="govuk-table__cell "></td>
-  <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> S827LKJ </p> </td>
-  <td class="govuk-table__cell">Brown.12334</td>
-  <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive In progress </p></td>
-  <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
-  <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress</t></td>
-  <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
-  <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
-  </tr>
-
-
-  <tr class="govuk-table__row expandy-row hide-row">
+            <tr class="govuk-table__row expandy-row hide-row">
     <!-- Vertical line -->
     <td class="govuk-table__cell" colspan="1" ></div>
   </td>
@@ -852,25 +853,25 @@ id: "Completed"
 
 <!-- Footer -->
 
-  <div style="align: center; padding-left: 100px; padding-right: 100px;">
-    <hr>
-    <br>
+      <div style="align: center; padding-left: 100px; padding-right: 100px;">
+            <hr>
+            <br>
 
-  <a href="#" style="text-color: grey; text-decoration: none;"> Terms and conditions</a>
-  <a href="#" style="text-color: grey; text-decoration: none;">| Service hours</a>
-  <a href="#" style="text-color: grey; text-decoration: none;">| Fair processing</a>
-  <a href="#" style="text-color: grey; text-decoration: none;">| Personal information</a>
-  <a href="#" style="text-color: grey; text-decoration: none;">| Freedom of information</a>
-  <a href="#" style="text-color: grey; text-decoration: none;">| © Crown copyright </a>
+          <a href="#" style="text-color: grey; text-decoration: none;"> Terms and conditions</a>
+          <a href="#" style="text-color: grey; text-decoration: none;">| Service hours</a>
+          <a href="#" style="text-color: grey; text-decoration: none;">| Fair processing</a>
+          <a href="#" style="text-color: grey; text-decoration: none;">| Personal information</a>
+          <a href="#" style="text-color: grey; text-decoration: none;">| Freedom of information</a>
+          <a href="#" style="text-color: grey; text-decoration: none;">| © Crown copyright </a>
 
-  <a style="float:right;" href="/prototype-admin/clear-data"> Clear data </a>
-  <br>
-  <br>
-  <br>
-  <br>
+          <a style="float:right;" href="/prototype-admin/clear-data"> Clear data </a>
+          <br>
+          <br>
+          <br>
+          <br>
 
 
-</div>
+      </div>
 </div>
 
 

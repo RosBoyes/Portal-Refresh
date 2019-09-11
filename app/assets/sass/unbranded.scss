@@ -16,6 +16,7 @@ $govuk-page-width: 1200px;
 // See localhost:3000/docs/examples/blank-unbranded
 
 
+
 .govuk-tag--delayed {
   background-color: rgba(163,24,38,1);
   color: white;
@@ -172,20 +173,20 @@ a:visited {
   }
 }
 
-.filter {
-  font-size: 14px;
-  background: white;
-  border: 1;
-  border-color: black;
-  border-radius: 2px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  width: 170px;
-  height: 40px;
-  text-align: left;
-  text-decoration: none;
-}
+// .filter {
+//   font-size: 14px;
+//   background: white;
+//   border: 1;
+//   border-color: black;
+//   border-radius: 2px;
+//   padding-left: 10px;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   width: 170px;
+//   height: 40px;
+//   text-align: left;
+//   text-decoration: none;
+// }
 
 .filterold {
   font-size: 16px;
@@ -200,14 +201,14 @@ a:visited {
   text-decoration: none;
 }
 
-.filter:after {
-  content: '  ▼'
-
-}
-
-.active:after {
-  content: '  ▲'
-}
+// .filter:after {
+//   content: '  ▼'
+//
+// }
+//
+// .active:after {
+//   content: '  ▲'
+// }
 
 .govuk-checkboxes__label {
   font-size: 14px;
@@ -215,7 +216,12 @@ a:visited {
 
 .checkbox2 .govuk-checkboxes__item {
   clear: none;
-  width: 33%;
+  width: 35%;
+}
+
+.checkbox3 .govuk-checkboxes__item {
+  clear: none;
+  width: 25%;
 }
 
 .expandy-row-trigger2 {
@@ -233,9 +239,30 @@ tr.govuk-link:hover td:last-child {
   text-decoration: none;
 }
 
+tr.govuk-link td:last-child {
+  text-decoration: none;
+}
+
 .thirdparty:hover {
   color: black;
 }
+
+.filterbutton {
+  width: 55%;
+  padding: 0px;
+  border: none;
+  text-align: left;
+}
+
+.filterbutton::after {
+  content: '  +'
+}
+
+.details:hover {
+  text-decoration: underline;
+}
+
+
 
 
 // Version 3 //

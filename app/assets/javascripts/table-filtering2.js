@@ -5,6 +5,9 @@
   var rpp = 10;
   var pagination = document.getElementById('pagination')
 
+
+
+
   function filterTable(value, columns, classesToHide) {
     [].forEach.call(rows, function(row, index) {
       var hideRow = true
