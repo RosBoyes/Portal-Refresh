@@ -190,8 +190,9 @@
 
 <!-- Service title -->
 
-<div class="govuk-grid-column-three-quarters">
-    <h1 style="font-weight: normal; font-size: 20px;"> View My Applications </h1>
+<div class="govuk-grid-column-three-quarters" style="margin-top: 5px;">
+    <h1 class="govuk-heading-l govuk-!-font-size-27" style="font-weight: normal;"> View My Applications </h1>
+    <br>
 
 
 <!---CONTENT----->
@@ -207,20 +208,20 @@
       <form id="search" style="">
         <div class="govuk-grid-column-one-third">
 
-        <h2 style="float: left;"> Search by Customer reference, Title number or HMLR reference</h2>
-        <br><br>
+        <h2 class="govuk-heading-s govuk-!-font-size-19" style="font-weight: normal; width: 125%;"> Search by Customer reference, Title <br>number or HMLR reference</h2>
 
-        <input type="text" id="search-input" style="width: 300px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 10px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
-        <button  id="search-button" style="float: left; font-size: 19px; margin-top: 10px;"> Search </button>
+        <input type="text" id="search-input" style="width: 275px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 5px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
+        <button  id="search-button"> Search </button>
+        <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 16 px; margin-top: 20px;"> Reset search and filters</a>
 
         </div>
 
 
 
     <div class="govuk-grid-column-two-thirds">
-        <h2 style="padding-left: 100px;"> Show only</h2>
+        <h2 class="govuk-heading-s govuk-!-font-size-19" style="font-weight:normal; margin-left: 100px;"><br>Show only</h2>
 
-              <div class="" style="display: flex; justify-content: flex-end;; margin-left: 100px;">
+              <div class="" style="margin-left: 100px; margin-top: px;">
 
                   {{ govukCheckboxes ({
                   idPrefix: "application-type2",
@@ -247,14 +248,17 @@
                   }
                   ]
                 }) }}
+
               </div>
-              <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-grid-column-two-thirds" style="padding-left: 100px;">
                 <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
-                  <a class="details" style="font-size: 16px;">Show more filter options</a>
+                  <a class="details" style="font-size: 16px;">Additional filter options</a>
                 </summary>
-                <div class="govuk-details__text" style="width: 150%">
-                  <h4> Show only </h4>
+                <div class="govuk-details__text" style="width: 150%;">
+                  <h4 style="margin-top: 1px; margin-bottom: 5px; font-weight: normal; font-size: 19px;"> Show only </h4>
+                  <br>
+                  
                   {{ govukCheckboxes ({
                   idPrefix: "application-progress2",
                   name: "application-progress2",
@@ -326,15 +330,13 @@
           <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Customer reference</th>
           <th class="govuk-table__header govuk-!-width-one-sixth " scope="col">Application type</th>
           <th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Received by HMLR </th>
-          <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col">Application progress</th>
-          <th class="govuk-table__header govuk-!-width-one-fifth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
-          <th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a href="#"  style="font-weight: bold; font-size: 14px;" class="expandyAll">View details</a></th>
+          <th class="govuk-table__header govuk-!-width-one-sixth  " scope="col" style="width: 20%;">Application progress</th>
+          <th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
+          <th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a style="font-weight: bold; font-size: 14px;" class="expandyAll">View details</a></th>
           </tr>
           <tr class="govuk-table__row"><p style="font-size: 14px; float: left;">
               Estimated completion dates are calculated using <a class="govuk-link" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a>
-              <br> Dates may change depending on current wait times and the status of an application. </p> </th>
-
-              <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 14px; margin-top: 20px;">Reset search and filters</a>
+              Dates may change depending on current wait times and the status of an application. </p> </th>
           </tr>
         </thead>
 
@@ -369,9 +371,11 @@
 
       <!-- Correspondence -->
               <td class="govuk-table__cell" colspan="2">
-              <b>Correspondence</b>
+
+                <br><b>Correspondence</b>
               <p style="font-size: 14px;"><br>
               <a href="#"> Notice(s) issued on 22/08/19</a><br>
+              <a class="thirdparty"> Notice(s) issued on 24/07/19</a><br>
               <a href="#"> Notice(s) issued on 12/07/19</a></p>
               </td>
 
@@ -391,10 +395,10 @@
             <tr class="govuk-table__row govuk-link">
               <td class="govuk-table__cell "></td>
               <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> S827LKJ </p> </td>
-              <td class="govuk-table__cell">Brown.12334</td>
-              <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive In progress </p></td>
+              <td class="govuk-table__cell">JT/391/Williams</td>
+              <td class="govuk-table__cell Substantive">New Lease <p class="govuk-visually-hidden"> Substantive Received </p></td>
               <td class="govuk-table__cell" scope="row" data-sortable="2019-04-01">01/04/19</td>
-              <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress</t></td>
+              <td  class="govuk-table__cell"> <t class="govuk-tag--progress"> Received: Priority Protected - Awaiting Processing</t></td>
               <td class="govuk-table__cell"style="padding-left: 10px;" data-sortable="2019-08-01">01/08/19</td>
               <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
             </tr>
@@ -437,9 +441,9 @@
   <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP09209 <p class="govuk-visually-hidden"> Y917GSY </p> </td>
   <td class="govuk-table__cell">Bartlett.23124</td>
-  <td class="govuk-table__cell">Official Copies <p class="govuk-visually-hidden"> Preliminary</p></td>
+  <td class="govuk-table__cell">Official Copies <p class="govuk-visually-hidden"> Preliminary Completed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-01-01">01/01/19</td>
-  <td class="govuk-table__cell" scope="row"><p class="govuk-visually-hidden"></td>
+  <td class="govuk-table__cell" scope="row">Completed</td>
   <td class="govuk-table__cell" style="padding-left: 10px;">  </td>
     <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2 nogovuk-link" href="#">+</a></td>
   </tr>
@@ -487,8 +491,8 @@
 
   <tr class="govuk-table__row govuk-link">
 <td class="govuk-table__cell "></td>
-  <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> E921HSK </p></td>
-  <td class="govuk-table__cell">Watkins.12334</td>
+  <td class="govuk-table__cell" scope="row">LP980165<p class="govuk-visually-hidden"> E921HSK </p></td>
+  <td class="govuk-table__cell">JT/938/Watkins</td>
   <td class="govuk-table__cell">Official Search of Whole with Priority<p class="govuk-visually-hidden"> Preliminary Completed </p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-13">13/06/19</td>
   <td  class="govuk-table__cell" scope="row"><text class="govuk-tag--complete">Completed</text></td>
@@ -543,9 +547,9 @@
 
   <tr class="govuk-table__row govuk-link">
 <td class="govuk-table__cell "></td>
-  <td class="govuk-table__cell" scope="row">LP451734 <p class="govuk-visually-hidden"> M928SAI </p></td>
+  <td class="govuk-table__cell" scope="row">LP45173 <p class="govuk-visually-hidden"> M928SAI </p></td>
   <td class="govuk-table__cell">Smith.20313</td>
-  <td class="govuk-table__cell">Register Update<p class="govuk-visually-hidden"> Substantive Delayed</p></td>
+  <td class="govuk-table__cell">Transfer of Part<p class="govuk-visually-hidden"> Substantive Delayed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
   <td class="govuk-table__cell"scope="row">Delayed - Extension of Time Granted </td>
   <td class="govuk-table__cell" style="padding-left: 10px;"  data-sortable="2019-10-20">20/10/19</td>
@@ -570,7 +574,7 @@
               Requisition(s) issued on 29/06/19<br><br>
           </a></td>
     <!-- Files -->
-            <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+            <td class="govuk-table__cell" colspan="1" style="padding-top: 0px;">
             <b>Files</b>
             <p style="font-size: 14px;">
 
@@ -578,6 +582,15 @@
               <br>
               <br>
             </p></td>
+            <!-- Parent titles -->
+                    <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+                    <br><br><b>Parent title(s)</b><br><br>
+                    <p style="font-size: 14px;">
+                      LP20001<br>
+
+                      <br>
+                      <br>
+                    </p></td>
 
       </div>
     </tr>
@@ -591,9 +604,9 @@
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP54312 <p class="govuk-visually-hidden"> A272JSH </p></td>
   <td class="govuk-table__cell">Curtis.15439</td>
-  <td class="govuk-table__cell">Transfer of Part<p class="govuk-visually-hidden"> Substantive Received</p></td>
+  <td class="govuk-table__cell">Transfer of Part<p class="govuk-visually-hidden"> Substantive In progress</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-06-12">12/06/19</td>
-  <td class="govuk-table__cell"> <t class="govuk-tag--progress"> Received: Priority Protected - Set-up activity underway </t> </td>
+  <td class="govuk-table__cell"> <t class="govuk-tag--progress"> In progress </t> </td>
   <td class="govuk-table__cell"style="padding-left: 10px;"  data-sortable="2019-08-15"> 15/08/19</td>
   <td class="govuk-table__cell" scope="row"><a class="expandy-row-trigger2" href="#">+</a></td>
   </tr>
@@ -609,22 +622,51 @@
               <b> HMLR Reference</b>
               <br><br>
               <p style="font-size: 14px;">A272JSH</p>
+              <br>
+              <br>
+              <br>
+              <br>
+
               </td>
       <!-- Correspondence -->
             <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
               <b>Correspondence</b>
               <a href="#" style="font-size: 14px;"><br><br>
-                <br><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </a></td>
       <!-- Files -->
-              <td class="govuk-table__cell" colspan="2" style="padding-top: 0px;">
+              <td class="govuk-table__cell" colspan="1" style="padding-top: 0px;">
               <b>Files</b>
               <p style="font-size: 14px;">
 
                 <a href="#"></a>
                 <br>
                 <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
               </p></td>
+      <!-- Parent titles -->
+      <td class="govuk-table__cell" colspan="1" style="padding-top: 0px;">
+      <br><br><b>Parent title(s)</b><br><br>
+      <p style="font-size: 14px;">
+        LP10001<br>
+        LP10002<br>
+        LP10003<br>
+        LP10004<br>
+        LP10005<br>
+        and others
+
+        <br>
+        <br>
+      </p></td>
 
         </div>
       </tr>
@@ -636,7 +678,7 @@
   <tr class="govuk-table__row govuk-link">
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> T832JDH </p></td>
-  <td class="govuk-table__cell">Franklin.17234</td>
+  <td class="govuk-table__cell">JT/722/Davis</td>
   <td class="govuk-table__cell">Official Search of Part with Priority<p class="govuk-visually-hidden"> Preliminary Cancelled</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-10">10/05/19</td>
   <td class="govuk-table__cell">Cancelled</td>
@@ -779,7 +821,7 @@
   <tr class="govuk-table__row govuk-link">
 <td class="govuk-table__cell "></td>
   <td class="govuk-table__cell" scope="row">LP980123 <p class="govuk-visually-hidden"> A391OLS </p></td>
-  <td class="govuk-table__cell">Colbrook.12334</td>
+  <td class="govuk-table__cell">JT/103/Wilson</td>
   <td class="govuk-table__cell">New Lease<p class="govuk-visually-hidden"> Substantive Completed</p></td>
   <td class="govuk-table__cell" scope="row" data-sortable="2019-05-01">01/05/19</td>
   <td  class="govuk-table__cell"> <label class="govuk-tag--complete">Completed</label> </td>
@@ -796,19 +838,12 @@
     <!-- HMLR reference -->
 
             <td class="govuk-table__cell" colspan="2" style="padding-top: 10px;">
-            <b> HMLR Reference</b>
+            <br><b> HMLR Reference</b>
             <br><br>
             <p style="font-size: 14px;">A391OLS </p>
 
             <!-- Parent titles -->
 
-                    <b>Parent titles</b><br><br>
-                    LP00001<br>
-                    LP00002<br>
-                    LP00003<br>
-                    <p style="font-size: 14px;">
-
-                    </p></td>
     <!-- Correspondence -->
           <td class="govuk-table__cell" colspan="2">
             <b>Correspondence</b>

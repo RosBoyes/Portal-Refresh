@@ -56,13 +56,17 @@ $govuk-page-width: 1200px;
 
 
 #search-button {
-  width: 100px;
+  width: 100px;;
   height: 40px;
   background-color:  rgba(0,112,60, 0.9);
   color: white;
-  margin-left: 0px;
+  margin-left: px;
   border-color: #00703c;
   border-radius: 3px;
+  font-size: 17px;
+  float: left;
+  margin-top: 10px;
+
 
 
 }
@@ -74,7 +78,10 @@ $govuk-page-width: 1200px;
   background-color: #00703c;
   border-color: #027333;
   color: white;
-    border-radius: 3px;
+  border-radius: 3px;
+  font-size: 17px;
+  float: left;
+  margin-top: 10px;
 
 }
 
