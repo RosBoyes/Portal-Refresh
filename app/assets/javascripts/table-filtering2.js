@@ -1,9 +1,12 @@
-govuk-visually-hidden(function () {
+(function () {
   var table = document.querySelector('.my-work')
   var rows = table.querySelectorAll('tbody');
   var page = 0;
   var rpp = 10;
   var pagination = document.getElementById('pagination')
+
+
+
 
   function filterTable(value, columns, classesToHide) {
     [].forEach.call(rows, function(row, index) {
@@ -38,19 +41,20 @@ govuk-visually-hidden(function () {
     })
   }
 
-  function hideViewedRows() {
-    [].forEach.call(rows, function(row, index) {
-      if (row.classList.contains('viewed')) {
-        row.classList.add('govuk-visually-hidden')
-      }
-    })
-  }
+  // function hideViewedRows() {
+  //   [].forEach.call(rows, function(row, index) {
+  //     if (row.classList.contains('viewed')) {
+  //       row.classList.add('govuk-visually-hidden')
+  //     }
+  //   })
+  // }
 
   // Bind filtering functionality to search box
   var searchBox = document.getElementById('search-input')
   var applicationType = document.getElementById('application-type2')
   var applicationProgress = document.getElementById('application-progress2')
   var searchForm = document.getElementById('search')
+  var searchButton = document.getElementById('search-button')
   searchForm.addEventListener('submit', function(e) {
     e.preventDefault()
     updateSearch()
@@ -81,21 +85,20 @@ govuk-visually-hidden(function () {
   function updateSearch() {
     resetTable()
 
-    const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
-    // if (applicationProgressChoices.length > 0) {
-        filterTable(applicationProgressChoices, [5])
-    // }
-
-    const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
-    if (applicationTypeChoices.length > 0) {
-        filterTable(applicationTypeChoices, [3])
-    } else {
-        filterTable(applicationTypeChoices, [0])
-    }
-
-    if(searchBox.value.length > 0) {
+    if(searchBox.value.length >= 1) {
       filterTable(searchBox.value, [1, 2])
     }
+
+    const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
+    if (applicationTypeChoices.length >=1) {
+        filterTable(applicationTypeChoices, [3])}
+
+
+    const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
+    if (applicationProgressChoices.length >=1) {
+        filterTable(applicationProgressChoices, [3])}
+
+
 
 // //     // paginate
 //     resultSet = Array.prototype.slice.call(rows).filter(function(row) {
@@ -132,7 +135,7 @@ govuk-visually-hidden(function () {
 
     searchBox.value = ''
     applicationTypeCheckboxes.concat(applicationProgressCheckboxes).forEach(function(checkbox) {
-      checkbox.checked = true
+      checkbox.checked = false
     })
     // hideViewed.checked = false
   })
@@ -160,22 +163,7 @@ govuk-visually-hidden(function () {
   //   }
   // }
 
-  // select all //
-  $('#select-all').click(function(event) {
-      if(this.checked) {
-          // Iterate each checkbox
-          $('.checkbox-progress input[type="checkbox"]').each(function() {
-              this.checked = true;
-          });
-      } else {
-          $('.checkbox-progress input[type="checkbox"]').each(function() {
-              this.checked = false;
-          });
-        }
 
-      updateSearch();
-
-  });
 
   // select all session C//
   $('#select-all').click(function(event) {
@@ -193,9 +181,6 @@ govuk-visually-hidden(function () {
       updateSearch();
 
   });
-
-
-
 
 })()
 

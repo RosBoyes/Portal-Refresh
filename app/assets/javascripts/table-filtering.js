@@ -84,14 +84,16 @@
     const applicationProgressChoices = getSelectedCheckboxValues(applicationProgressCheckboxes)
     // if (applicationProgressChoices.length > 0) {
         filterTable(applicationProgressChoices, [5])
+
     // }
 
     const applicationTypeChoices = getSelectedCheckboxValues(applicationTypeCheckboxes)
     if (applicationTypeChoices.length > 0) {
         filterTable(applicationTypeChoices, [3])
+
     } else {
         filterTable(applicationTypeChoices, [0])
-    }
+      }
 
 
     if(searchBox.value.length > 0) {
@@ -194,6 +196,9 @@
       updateSearch();
 
   });
+
+
+
 
 
 
