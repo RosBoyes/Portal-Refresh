@@ -208,18 +208,17 @@
       <form id="search" style="">
         <div class="govuk-grid-column-one-third">
 
-        <h2 class="govuk-heading-s govuk-!-font-size-19" style="font-weight: normal; width: 125%;"> Search by Customer reference, Title <br>number or HMLR reference</h2>
+        <h2 class="govuk-heading-s govuk-!-font-size-16" style="font-weight: normal; width: 125%;"> Search by Customer reference, Title <br>number or HMLR reference</h2>
 
         <input type="text" id="search-input" style="width: 275px; height: 35px; font-size: 14px; padding-left: 10px; margin-top: 5px; float: left; border-color: black; border-width: 1px; border-radius: 2px;">
         <button  id="search-button"> Search </button>
-        <a href="#" id="reset" class="govuk-link" style="float: right; font-size: 16 px; margin-top: 20px;"> Reset search and filters</a>
 
         </div>
 
 
 
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-s govuk-!-font-size-19" style="font-weight:normal; margin-left: 100px;"><br>Show only</h2>
+        <h2 class="govuk-heading-s govuk-!-font-size-16" style="font-weight:normal; margin-left: 100px;"><br>Show only</h2>
 
               <div class="" style="margin-left: 100px; margin-top: px;">
 
@@ -250,15 +249,24 @@
                 }) }}
 
               </div>
-              <div class="govuk-grid-column-two-thirds" style="padding-left: 100px;">
+            </div>
+
+            <div class="govuk-grid-column-one-half" style="padding-left: 0px;">
+              <a href="#" id="reset" class="govuk-link govuk-link--no-visited-state" style="float: left; font-size: 16px; margin-top: 20px; margin-left: 20px;"> Reset search and filters</a>
+            </div>
+
+
+              <div class="govuk-grid-column-one-half" style="margin-left: -50px;">
+                <br>
                 <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
-                  <a class="details" style="font-size: 16px;">Additional filter options</a>
+
+                  <a class="details" style="font-size: 16px; float: left;">Additional filter options</a>
                 </summary>
-                <div class="govuk-details__text" style="width: 150%;">
-                  <h4 style="margin-top: 1px; margin-bottom: 5px; font-weight: normal; font-size: 19px;"> Show only </h4>
+                <div class="govuk-details__text" style="width: 100%;">
+                  <h4 style="margin-top: 1px; margin-bottom: 5px; font-weight: normal; font-size: 16px;"> Show only </h4>
                   <br>
-                  
+
                   {{ govukCheckboxes ({
                   idPrefix: "application-progress2",
                   name: "application-progress2",
@@ -318,7 +326,11 @@
 </div>
 
 
-  <div>
+<div class="govuk-grid-column-three-quarters" style="float: right; margin-top: -50px;">
+  <tr class="govuk-table__row"><p style="font-size: 14px; float: left;">
+      Estimated completion dates are calculated using <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a>
+      <br>Dates may change depending on current wait times and the status of an application. </p> </th>
+  </tr>
 
 <!-- My Work Table -->
     <table class="govuk-table my-work">
@@ -334,10 +346,7 @@
           <th class="govuk-table__header govuk-!-width-one-sixth sortable" style="cursor: pointer;" scope="col">Estimated completion </th>
           <th class="govuk-table__header govuk-!-width-one-twelfth" style="cursor: pointer; width: 6%;" scope="col"><a style="font-weight: bold; font-size: 14px;" class="expandyAll">View details</a></th>
           </tr>
-          <tr class="govuk-table__row"><p style="font-size: 14px; float: left;">
-              Estimated completion dates are calculated using <a class="govuk-link" href="https://www.gov.uk/government/publications/hm-land-registry-service-standards/our-service-standards#average-completion-times">Average completion times.</a>
-              Dates may change depending on current wait times and the status of an application. </p> </th>
-          </tr>
+
         </thead>
 
 
